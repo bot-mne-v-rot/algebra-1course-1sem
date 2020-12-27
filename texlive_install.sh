@@ -65,6 +65,9 @@ tlmgr install   \
   marginnote \
   soulpos \
   titlesec \
+  hyphsubst \
+  datetime2-russian \
+  bookmark
   
 
 # Keep no backups (not required, simply makes cache bigger)
