@@ -7,6 +7,7 @@ cache:
 script:
 - mkdir _build
 - travis_wait 3 pdflatex -output-directory _build ./LinalColloc02.tex
+- travis_wait 3 pdflatex -output-directory _build ./LinalColloc02.tex
 before_deploy:
 - ls
 deploy:
