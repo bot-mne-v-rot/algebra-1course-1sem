@@ -1,1 +1,39 @@
 \section{Определитель матрицы с почти нулевой строкой}
+
+\begin{theorem-non} $\quad$ \\
+    $A =
+    \begin{pmatrix}
+        \dots & \dots & \dots & \dots & \dots & \dots & \dots \\
+        0 & \dots & 0 & m & 0 & \dots & 0 \\
+        \dots & \dots & \dots & \dots & \dots & \dots & \dots
+    \end{pmatrix}, \\
+    m$ --- элемент на пересечении $i$-ой строки и $j$-ого столбца.
+    
+    Тогда
+    $|A| = (-1)^{i+j} \cdot m \cdot |M_{ij}|$,
+    где $|M_{ij}|$ --- матрица, полученная путём вычёркивания из $A$
+    $i$-ой строки и $j$-ого столбца.
+    
+    $|M_{ij}|$ --- минор, дополненный к элементу $m$.
+    
+    \begin{proof}
+        $1)\; i = j = 1$, т.е.
+        $A =
+    \begin{pmatrix}
+        m & 0 & \dots & 0 \\
+        \vdots & & M_{11} &  \\
+    \end{pmatrix}$ 
+    
+        $|A| = m \cdot |M_{11}| = (-1)^{1 + 1} \cdot m \cdot |M_{11}|$
+    
+        $2)$ Общий случай.
+        
+        $|A| = (-1)^{i -1} \cdot (-1)^{j - 1} \cdot |A'| = (-1)^{i + j} \cdot m \cdot |M_{ij}|$
+    
+        $A' = 
+        \begin{pmatrix}
+            m & 0 & \dots & 0 \\
+            \vdots & & M_{ij} & 
+        \end{pmatrix}$
+    \end{proof}
+    \end{theorem-non}
