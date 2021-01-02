@@ -10,15 +10,15 @@ script:
 - travis_wait 3 pdflatex -output-directory _build ./LinalColloc02.tex
 before_deploy:
 - ls
-deploy:
-  provider: releases
-  api_key:
-    secure: mQf8MQjFJmMtrNPvVxcfs9hItEY+MAdA6YBalJqldnCnjz7RjS/bKK+6tw55zV+iQ2JmvTL9B9Z5mqo6wrg8x15GaZzb1xgVS9iU81gSSmhYAhqE5AzH/OLEvYdQP6Hsx03LJ3OEykYPpDgGhW8wyg15cQCN0T14p5A1DUdX92vgbVxk/aJONMPSA1TC2W08TuOl6gk+t2MNyRFOwKmAbGkr9iyIzqULJTn2fOisiIOInKqfgg/wjpYcHV1LS2n744opKya54jbNexfb4MNTUu56rm3n6pXpSY69DKuR6iVx+CvluweJhddr4Tf5WgSDkjd0vpyrx4g1o2Rus9ntiMxEQ6zOS/BAO9fNY/Y2U63GMrerwHOXfparJMlotzd4SexNqJH2pJzlelyN1XV2Lp1NKm0r6V1XozJfm/eqlE004fIWeWTzLGV4BxZog3Rls+ldb1O6Q87y5ohd7QhcgvIhhV+Y/QqqzWOsu5BGiLhQgG2CvNrlyUuEDZw4kD5UWLrJihH/KZ9ENQdwuN5qx1MvWSYPafbBJuyQNFsXQAMDeBIkPXTUHuPBvtwYA+I2Iu52sDd3x6f4yPLWw88RRIstOYXeB/mJywddvMwKY/hxqxjveD00EwXMmP0J7UgnNUggaHIzcHhJ6156YkOtyrRIBrY5MjWJs6nRH+ws7Bc=
-  file: "_build/LinalColloc02.pdf"
-  draft: true
-  overwrite: true
-  on:
-    repo: bot-mne-v-rot/algebra-1course-1sem
-    branch:  
-        - master 
-  skip_cleanup: 'true'
+# deploy:
+#   provider: releases
+#   api_key:
+#     secure: mQf8MQjFJmMtrNPvVxcfs9hItEY+MAdA6YBalJqldnCnjz7RjS/bKK+6tw55zV+iQ2JmvTL9B9Z5mqo6wrg8x15GaZzb1xgVS9iU81gSSmhYAhqE5AzH/OLEvYdQP6Hsx03LJ3OEykYPpDgGhW8wyg15cQCN0T14p5A1DUdX92vgbVxk/aJONMPSA1TC2W08TuOl6gk+t2MNyRFOwKmAbGkr9iyIzqULJTn2fOisiIOInKqfgg/wjpYcHV1LS2n744opKya54jbNexfb4MNTUu56rm3n6pXpSY69DKuR6iVx+CvluweJhddr4Tf5WgSDkjd0vpyrx4g1o2Rus9ntiMxEQ6zOS/BAO9fNY/Y2U63GMrerwHOXfparJMlotzd4SexNqJH2pJzlelyN1XV2Lp1NKm0r6V1XozJfm/eqlE004fIWeWTzLGV4BxZog3Rls+ldb1O6Q87y5ohd7QhcgvIhhV+Y/QqqzWOsu5BGiLhQgG2CvNrlyUuEDZw4kD5UWLrJihH/KZ9ENQdwuN5qx1MvWSYPafbBJuyQNFsXQAMDeBIkPXTUHuPBvtwYA+I2Iu52sDd3x6f4yPLWw88RRIstOYXeB/mJywddvMwKY/hxqxjveD00EwXMmP0J7UgnNUggaHIzcHhJ6156YkOtyrRIBrY5MjWJs6nRH+ws7Bc=
+#   file: "_build/LinalColloc02.pdf"
+#   draft: true
+#   overwrite: true
+#   on:
+#     repo: bot-mne-v-rot/algebra-1course-1sem
+#     branch:  
+#         - master 
+#   skip_cleanup: 'true'
