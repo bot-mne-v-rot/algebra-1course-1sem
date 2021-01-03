@@ -1,1 +1,82 @@
 \section{Разложение определителя по строке (столбцу)}
+
+\begin{conj}
+    $A_{ij} = (-1)^{i+j} \cdot |M_{ij}|$ называется алгебраическим
+    дополнением к элементу в позиции $(i, j)$.
+\end{conj}
+
+\begin{theorem-non}
+    Пусть $A = (a_{ij}) \in M(n, R)$
+
+    Тогда $|A| = a_{k1}A_{k1} + \dots + a_{kn}A_{kn},\quad 1 \leqslant k \leqslant n$
+
+    \begin{proof}
+        $|A| =
+        \begin{vmatrix}
+            \vdots & \dots & \vdots \\
+            a_{k1} & \dots & a_{kn} \\
+            \vdots & \dots & \vdots
+        \end{vmatrix} =$ 
+
+        $\begin{vmatrix}
+            a_{11} & a_{12} & \dots & a_{1n} \\
+            \vdots & \vdots & \dots & \vdots \\
+            a_{k1} & 0 & \dots & 0 \\
+            \vdots & \vdots & \dots & \vdots \\
+            a_{n1} & a_{n2} & \dots & a_{nn}
+        \end{vmatrix} + $
+        $\begin{vmatrix}
+            a_{11} & a_{12} & \dots & a_{1n} \\
+            \vdots & \vdots & \dots & \vdots \\
+            0 & a_{k2} & \dots & 0 \\
+            \vdots & \vdots & \dots & \vdots \\
+            a_{n1} & a_{n2} & \dots & a_{nn}
+        \end{vmatrix} + \dots + $
+        $\begin{vmatrix}
+            a_{11} & \dots & a_{1(n-1)} & a_{1n} \\
+            \vdots & \dots & \vdots & \vdots \\
+            0 & \dots & 0 & a_{nn} \\
+            \vdots & \dots & \vdots & \vdots \\
+            a_{n1} & \dots & a_{n(n-1)} & a_{nn}
+        \end{vmatrix} = a_{k1}\cdot A_{k1} + \dots + a_{nk} \dots A_{nk}$
+    \end{proof}
+\end{theorem-non}
+
+\notice Аналогично выглядит разложение определителя по $k$-му столбцу.
+
+$|A| = a_{1k} \cdot A_{1k} + \dots + a_{nk} \cdot A_{nk}$
+
+\begin{lemma}
+    О фальшифом разложении определителя. 
+
+    Пусть $1 \leqslant i,j \leqslant n; i \neq j; A \in M(n, R)$
+    
+    Тогда $a_{i1} \cdot A_{j1} + \dots + a_{in} \cdot A_{jn} = 0$
+
+    \begin{proof}
+        $ $ 
+
+        $A =
+        \begin{pmatrix}
+            A_1 \\
+            \vdots \\
+            A_i \\
+            \vdots \\
+            A_j \\
+            \vdots \\
+            A_n
+        \end{pmatrix},$
+        $A' =
+        \begin{pmatrix}
+            A_1 \\
+            \vdots \\
+            A_i \\
+            \vdots \\
+            A_i$ ($j$-ая) $\\
+            \vdots \\
+            A_n
+        \end{pmatrix}$
+
+        $0 = |A'| = a_{i1} \cdot A_{j1} + \dots + a_{in} \cdot A_{jn}$
+    \end{proof}
+\end{lemma}

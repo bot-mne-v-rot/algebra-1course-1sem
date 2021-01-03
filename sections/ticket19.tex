@@ -1,1 +1,150 @@
 \section{Поведение определителя при элементарных преобразованиях матрицы}
+
+\begin{theorem-non}
+    $\quad$ 
+    \begin{enumerate}
+        \item При ЭП строк (столбцов) I типа определитель не изменяется.
+        \item При ЭП строк (столбцов) II типа определитель меняет знак.
+        \item При ЭП строк (столбцов) III типа определитель умножается на $\varepsilon$.
+    \end{enumerate}
+
+    \begin{proof} $\quad$ \\
+        \begin{enumerate}
+            \item[3.] Знаем (линейность)
+            \item[1.]
+            $A =
+            \begin{pmatrix}
+                A_1 \\
+                \vdots \\
+                A_n
+            \end{pmatrix}, \quad A_i$ --- $i$-ая строка.
+            
+            $A' = \tau_{ij}(\lambda) \cdot A = 
+            \begin{pmatrix}
+                A_1 \\
+                \vdots \\
+                A_i + \lambda \cdot A_j \\
+                \vdots \\
+                A_n
+            \end{pmatrix}$
+
+            $|A'| = 
+            \begin{vmatrix}
+                A_1 \\
+                \vdots \\
+                A_i \\
+                \vdots \\
+                A_n
+            \end{vmatrix} + 
+            \begin{vmatrix}
+                A_1 \\
+                \vdots \\
+                \lambda \cdot A_j \\
+                \vdots \\
+                A_n
+            \end{vmatrix} = |A| + \lambda \cdot 
+            \begin{vmatrix}
+                A_1 \\
+                \vdots \\
+                A_j \\
+                \vdots \\
+                A_j \\
+                \vdots \\
+                A_n
+            \end{vmatrix} = |A| + \lambda \cdot |0| = |A|$
+
+            \item[2.]
+            
+            $A' =
+            \begin{pmatrix}
+                A_1 \\
+                \vdots \\
+                A_j$ (i-ая)$\\
+                \vdots \\
+                A_i$ (j-ая)$ \\
+                \vdots \\
+                A_n
+            \end{pmatrix}$
+
+            Пусть $B = 
+            \begin{pmatrix}
+                A_1 \\
+                \vdots \\
+                A_i + A_j$ (i-ая) $\\
+                \vdots \\
+                A_i + A_j$ (j-ая) $\\
+                \vdots \\
+                A_n
+            \end{pmatrix}$
+
+            $0 = |B| = 
+            \begin{vmatrix}
+                A_1 \\
+                \vdots \\
+                A_i \\
+                \vdots \\
+                A_i + A_j \\
+                \vdots \\
+                A_n
+            \end{vmatrix} + 
+            \begin{vmatrix}
+                A_1 \\
+                \vdots \\
+                A_j \\
+                \vdots \\
+                A_i + A_j \\
+                \vdots \\
+                A_n
+            \end{vmatrix} = 
+            \begin{vmatrix}
+                A_1 \\
+                \vdots \\
+                A_i \\
+                \vdots \\
+                A_i \\
+                \vdots \\
+                A_n
+            \end{vmatrix} + 
+            \begin{vmatrix}
+                A_1 \\
+                \vdots \\
+                A_i \\
+                \vdots \\
+                A_j \\
+                \vdots \\
+                A_n
+            \end{vmatrix} + 
+            \begin{vmatrix}
+                A_1 \\
+                \vdots \\
+                A_j \\
+                \vdots \\
+                A_i \\
+                \vdots \\
+                A_n
+            \end{vmatrix} + 
+            \begin{vmatrix}
+                A_1 \\
+                \vdots \\
+                A_j \\
+                \vdots \\
+                A_j \\
+                \vdots \\
+                A_n
+            \end{vmatrix} = 0 + |A| + |A'| + 0 \Longrightarrow$
+            
+            $|A'| = -|A|$ 
+        \end{enumerate}
+    \end{proof}
+
+    \notice{Утверждение про столбцы получается через транспонирование.}
+
+
+
+
+
+
+
+
+
+\end{theorem-non}
