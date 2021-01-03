@@ -1,1 +1,118 @@
+% !TEX root = ../LinalColloc02.tex
+
 \section{Линейное пространство. Определение, примеры, простейшие свойства}
+
+\begin{conj}
+    Пусть $K$ -- некоторое поле, $V$ -- некоторое мн-во.
+    На $V$ задана структура \textbf{линейного пространства} над $K$, 
+    если заданы:
+    \begin{enumerate}
+        \item $``+'' : V \times V \rightarrow V$ (сложение)
+        \item $``\cdot'' : K \times V \rightarrow V$ (умножение на скаляр) 
+    \end{enumerate}
+
+    Элементы $V$ обычно называются векторами и обозначаются латинскими
+    буквами, а элементы $K$ называются скалярами и обозначаются греческими.
+    Например, $v_1 + v_2$ и $\alpha \cdot v$.
+
+    Заданные операции должны удовлетворять следующим аксиомам:
+    \begin{enumerate}
+        \item $(V, +)$ -- абелева группа
+        \item Закон дистрибутивности: \\
+        $\alpha \cdot (v_1 + v_2) = \alpha v_1 + \alpha v_2$
+        \item Ещё один закон дистрибутивности: \\
+        $(\alpha_1 + \alpha_2) \cdot v = \alpha_1 v + \alpha_2 v$
+        \item Ассоциативность умножения:\\
+        $ \alpha_1 (\alpha_2 \cdot v) = (\alpha_1 \alpha_2) \cdot v $
+        \item Умножение на единичный скаляр: \\
+        $ 1 \cdot v = v $
+    \end{enumerate}
+\end{conj}
+
+\textbf{Примеры:}
+\begin{enumerate}
+    \item Матрицы фиксированного размера $M(m, n, K)$.
+    
+    Особый случай -- матрицы-столбцы или матрицы-строки. Т.к.
+    они устроены совершенно одинаково, условимся использовать
+    матрицы-столбцы и будем обозначать их так: \\
+    $K^m := M(m, 1, K)$.\\
+    Также будем называть это арифметическим $m$-мерным пространством
+    над $K$.
+
+    \item Нуль-простанство $V = \{\, \overline{0} \,\} =: 0$.
+    
+    Операции:\\
+    $\overline{0} + \overline{0} := \overline{0}$\\
+    $\alpha \cdot \overline{0} := \overline{0}$
+
+    \item Многочлены $K[X]$.
+    
+    Можно брать многочлены степени, ограниченной сверху. Например:\\
+    $V := \{ f \in K[X] \mid \deg f \leqslant 5 \}$
+
+    \item $K := \R$, $V := \R_{> 0}$
+    
+    Операции:\\
+    $v_1 + v_2 := v_1 v_2$ -- сложение векторов -- умножение соотв.
+    чисел;\\
+    $\alpha \cdot v := v ^ \alpha$ -- умножение на скаляр -- возведение
+    соотв. вектору числа в степень числа, соотв. скаляру.
+
+    \begin{proof} $ $
+
+        \begin{enumerate}
+            \item То, что $(V, +)$ -- абелева группа, известно;
+            \item Дистрибутивность: \\
+            $(v_1 v_2)^\alpha = v_1^\alpha + v_2^\alpha$
+            \item Дистрибутивность 2: \\
+            $v^{\alpha_1 + \alpha_2} = v^{\alpha_1} v^{\alpha_2}$
+            \item Ассоциативность: \\
+            $(v^{\alpha_2})^{\alpha_1} = v^{\alpha_1 \alpha_2}$
+            \item $v ^ 1 = v$
+        \end{enumerate}
+    \end{proof}
+
+    \item $K := \mathbb{F}_2 = \Z / (2) = \{0, 1\}$, $M$ -- 
+    любое мн-во, $V := 2^M$.
+
+    Операции:\\
+    $v_1 + v_2 := v_1 \bigtriangleup v_2 = (v_1 \setminus v_2) \cup
+    (v_2 \setminus v_1)$\\
+    $1 \cdot v := v$\\
+    $0 \cdot v := \varnothing$
+
+    \begin{proof} $ $
+
+        \begin{enumerate}
+            \item То, что $(V, +)$ -- абелева группа, уже проверяли;
+            
+            \item 
+            $v_1 + v_2 = 1 \cdot (v_1 + v_2) = 1 \cdot v_1 +
+            1 \cdot v_2 = v_1 + v_2$;\\
+            $\varnothing = 0 \cdot (v_1 + v_2) = 0 \cdot v_1 +
+            0 \cdot v_2 = \varnothing \bigtriangleup \varnothing =
+            \varnothing$;
+
+            \item 
+            $\varnothing = 0 \cdot v = (1 + 1) \cdot v =
+            1 \cdot v + 1 \cdot v = v \bigtriangleup v = \varnothing$; \\
+            $v = 1 \cdot v = (1 + 0) \cdot v = 1 \cdot v + 0 \cdot v =
+            v \bigtriangleup \varnothing = v$; \\
+            $\varnothing = (0 + 0) \cdot v = 0 \cdot v + 0 \cdot v =
+            \varnothing \bigtriangleup \varnothing = \varnothing$;
+
+            \item 
+            $0 \cdot v = 0 \cdot (1 \cdot v) = (0 \cdot 1) \cdot v =
+            0 \cdot v$; \\
+            $1 \cdot v = 1 \cdot (1 \cdot v) = (1 \cdot 1) \cdot v =
+            1 \cdot v $; \\
+            $\varnothing = 1 \cdot \varnothing = 1 \cdot (0 \cdot v) =
+            (1 \cdot 0) \cdot v = 0 \cdot v = \varnothing$; \\
+            $\varnothing = 0 \cdot (0 \cdot v) = (0 \cdot 0) \cdot v =
+            0 \cdot v = \varnothing$;
+
+            \item $1 \cdot v = v$ по определению.
+        \end{enumerate}
+    \end{proof}
+\end{enumerate}
