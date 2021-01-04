@@ -1,1 +1,28 @@
 \section{Теорема Кронекера-Капелли. Критерий определённости совместной системы}
+
+\begin{theorem}
+    Кронекера-Капелли.
+
+    Система с расширеной матрицей $(A|b)$ совместа
+    $\Longleftrightarrow rk(A|b) = rk(A)$
+
+    \begin{proof}
+        \begin{center}
+            $rkA = dim \; \underbrace{Lin(A_1, \dots, A_n)}_{\text{w}}, \quad A_i = A[ \; , i]$ \\
+            $rk(A | b) = dim \; \underbrace{Lin(A_1, \dots, A_n, b)}_{\text{v}}$ \\
+            $dim \; w = dim \; v \Longleftrightarrow w = v \Longleftrightarrow b \in w
+            \Longleftrightarrow \exists \alpha_1, \dots, \alpha_n \in K:
+            \alpha_1 A_1 + \dots + \alpha_n A_n = b$ \\
+            $\Longleftrightarrow \exists \alpha_1, \dots, \alpha_n \in K:$ 
+            $A \cdot \begin{pmatrix}
+                \alpha_1 \\
+                \vdots \\
+                \alpha_n
+            \end{pmatrix} = b$ $\Longleftrightarrow$ СДУ с расширенной матрицей $(A | b)$ совместная
+        \end{center}    
+    \end{proof}
+\end{theorem}
+
+\notice Дополнение к т. К-К: совместная система является определённой $\Longleftrightarrow rkA = n$ 
+
+В частности если в совместной системе $m < n$, то система неопределённая.
