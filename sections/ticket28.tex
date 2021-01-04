@@ -1,3 +1,108 @@
 % !TEX root = ../LinalColloc02.tex
 
 \section{Линейно зависимые семейства, свойства}
+
+\begin{theorem-non}
+\end{theorem-non}
+Пусть $V$ -- ЛП/$K$. $v_1, \dots, v_n \in V$. Эквивалентны
+следующие два свойства:
+\begin{enumerate}
+    \item $\exists \alpha_1, \dots, \alpha_n \in K$, т.ч. 
+    $\exists i : \alpha_i \neq 0$ и $\alpha_1 v_1 + \dots + \alpha_n v_n
+    = 0$. \\ Другими словами, сущ. нетривиальная линейная 
+    комбинация данных векторов, равная $0$.
+    
+    \item $\exists j \in \{1..n\} : v_j \in \Lin(v_i \mid i \neq j)$. \\
+    Другими словами, $v_j$ является линейной комбинацией остальных
+    векторов.
+\end{enumerate}
+
+\begin{proof} $ $
+
+    ``$1 \Rightarrow 2$'':
+    \begin{align*}
+        & \exists j : \alpha_j \neq 0; \\
+        & \alpha_1 v_1 + ... + \alpha_n v_n = 0, \\
+        & \alpha_1 v_1 + ... + \alpha_{j-1} v_{j-1} 
+        + \alpha_{j+1} v_{j+1}
+        + ... + \alpha_n v_n = - \alpha_j v_j; \\
+        & \text{Т.к. } \alpha_j \neq 0 \text{, мы можем поделить на }
+        \alpha_j; \\
+        & v_j = \left(-\frac{\alpha_1}{\alpha_j}\right) v_1 + \dots +
+        \left(-\frac{\alpha_{j-1}}{\alpha_j}\right) v_{j-1} + 
+        \left(-\frac{\alpha_{j+1}}{\alpha_j}\right) v_{j+1} + \dots +
+        \left(-\frac{\alpha_n}{\alpha_j}\right) v_n 
+        \in \Lin(v_1, \dots, v_n)
+    \end{align*}
+    ``$2 \Rightarrow 1$'':
+    \begin{align*}
+        & v_j \in \Lin(v_i \mid i \neq j) \Rightarrow
+        v_j = \sum_{i \neq j} \beta_i v_i; &&&&&&&&&&&&&&&&&&&&&&&& \\
+        & \sum_{i \neq j} \beta_i v_i - v_j = 
+        \sum_{i=1}^n \beta_i v_i = 0 \text{, где } \beta_j = -1.
+    \end{align*}
+    $\quad \,\,$ Получаем нетривиальную линейную комбинацию, т.к. 
+    при векторе $v_j$ коэффициент $1 \neq 0$.
+
+\end{proof}
+
+\begin{conj} $ $\\
+    $v_1, \dots, v_n$ -- \textbf{линейно зависимая система} 
+    (\textbf{ЛЗС}), если выполняются условия из предложения.\\
+    $v_1, \dots, v_n$ -- \textbf{линейно независимая система}
+    (\textbf{ЛНС}) в противном случае.
+\end{conj}
+
+\begin{theorem-non}
+\end{theorem-non}
+\begin{enumerate}
+    \item $v_1, \dots, v_n$ -- ЛЗС $\Rightarrow \forall \sigma \in S_n 
+    \,\,\, v_{\sigma(1)}, \dots, v_{\sigma(n)}$ -- ЛЗС.
+    \item С ЛЗС:\\
+    $v_1, \dots, v_n$ -- ЛЗС, $v \in V$ $\Rightarrow
+    v_1, \dots, v_n, v$ -- ЛЗС.
+
+    С ЛНС:\\
+    $v_1, \dots, v_n$ -- ЛНС $\Rightarrow \forall i = 1..n
+    \,\,\, v_1, \dots, v_{i-1}, v_{i+1}, \dots, v_n$ -- ЛНС.
+    
+    \item $\exists i : v_i = 0 \Rightarrow v_1, \dots, v_n$ -- ЛЗС.
+    \item $v_1, \dots, v_n$ -- ЛНС, $v \in V$ Тогда: 
+    $v_1, \dots, v_n, v$ -- ЛЗС $\Longleftrightarrow
+    v \in \Lin(v_1, \dots, v_n)$.
+\end{enumerate}
+\begin{proof} $ $
+
+    \begin{enumerate} 
+        \item Тривиально.
+        \item С ЛЗС: \\
+        $\exists \alpha_1, \dots, \alpha_n \in K \mid 
+        \exists \alpha_i \neq 0$ и 
+        $\alpha_1 v_1 + \dots + \alpha_n v_n = 0$ -- нетрив. ЛК 
+        $\Longrightarrow \alpha_1 v_1 + \dots + \alpha_n v_n + 0 \cdot v 
+        = 0$ -- тоже нетрив. ЛК.
+
+        С ЛНС: \\
+        Аналогично.
+
+        \item $1 \cdot v_i + \sum \limits_{j \neq i} 0 \cdot v_j = 0$ --
+        нетривиальная ЛК.
+
+        \item 
+        ``$\Longleftarrow$'':\\
+        По определению ЛЗС.
+
+        ``$\Longrightarrow$'':\\
+        $v_1, \dots, v_n, v$ -- ЛЗС $\Rightarrow \exists
+        \alpha_1, \dots, \alpha_{n+1} \in K \mid \exists \alpha_i \neq 0$
+        и $\alpha_1 v_1 + \dots + \alpha_n v_n + \alpha_{n+1} v = 0$.
+        Предположим, что $\alpha_{n+1} = 0$ $\Rightarrow 
+        \alpha_1 v_1 + \dots + \alpha_n v_n = 0$ -- нетрив. ЛК
+        $\Rightarrow v_1, \dots, v_n$ -- ЛЗС. Противоречие.
+        Таким образом, $\alpha_{n+1} \neq 0$, значит
+        $v = \sum \limits_{i = 1}^n \frac{-\alpha_i}{\alpha_{n + 1}}
+        v_i \Rightarrow v \in \Lin(v_1, \dots, v_n)$.
+
+
+    \end{enumerate}
+\end{proof}
