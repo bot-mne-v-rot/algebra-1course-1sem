@@ -1,1 +1,67 @@
 \section{Изменение координат вектора при замене базиса}
+
+\begin{conj} 
+    
+    Пусть $e_1,\, e_2,\, \dots\, ,\, e_n$ ($E$) --- базис $V$. 
+    
+    $v \in V$, тогда по определению базиса $v = \alpha_1 e_1 + \dots + \alpha_n e_n$. 
+    Тогда $\alpha_1,\, \alpha_2,\, \dots\, ,\, \alpha_n$ --- координаты $v$ в базисе $E$.
+
+    $[v]_E =
+        \begin{pmatrix}
+            \alpha_1\\
+            \alpha_2\\
+            \vdots\\
+            \alpha_n
+        \end{pmatrix}
+    \in K^n$
+\end{conj}
+\
+\begin{conj}
+
+
+    $E' = (e'_1,\, e'_2,\, \dots\, ,\, e'_n)$, $[v]_{E'}$ --- другой базис, другие координаты вектора $v$ в нём.
+
+    $e'_j = c_{1j}e_1 + \dots + c_{nj}e_n,\ j = 1, \dots, n$
+
+    $C =
+        \begin{pmatrix}
+            c_{11} & c_{21} & \dots & c_{n1} \\
+            c_{12} & c_{22} & \dots & c_{n2} \\
+            \vdots & \vdots & \dots & \vdots \\
+            c_{1n} & c_{2n} & \dots & c_{nn}
+        \end{pmatrix}
+    $
+
+    $[e'_j]_E$ --- $j$-ый столбец матрицы $C$.
+
+    Заметим, что $E' = E \cdot C$.
+
+
+    \textbf{Пояснение:}
+    \emph{Вообще мы говорили только об умножении матриц над одним кольцом, но чисто формально можно забить сейчас, так как умеем умножать скаляр на вектор.}
+
+    Тогда $C$ --- матрица перехода от базиса $E$ к $E'$. Второе обозначение --- $M_{E \to E'}$.
+
+
+\end{conj}
+\
+\begin{theorem-non} 
+    
+    Пусть $X = [v]_E,\, X' = [v]_{E'}$
+
+    Тогда $X = M_{E \to E'} \cdot X$.
+    \begin{proof}
+        
+        $v = E \cdot X = E' \cdot X'$ и $E' = E \cdot M_{E \to E'}$.
+
+        $E \cdot X = (E \cdot M_{E \to E'}) \cdot X' = E \cdot (M_{E \to E'} \cdot X')$
+
+        $E$ --- базис $\Longrightarrow X = M_{E \to E'} \cdot X'$.
+
+    \end{proof}
+\end{theorem-non}
+
+
+
+

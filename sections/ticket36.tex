@@ -1,1 +1,79 @@
 \section{Равенство столбцового и строчного ранга}
+
+\begin{theorem-non} 
+
+    Столбцовый и строчный ранги $A$ не изменяются при элем. преоб. строк и столбцов. 
+    (докажем про оба ранга только для строк; для столбцов транспонируем матрицу)
+    \begin{proof}
+        
+        Пусть $A[1,],\, \dots,\, A[m,]$ --- строки $A$.\\
+        $A' = T_{ij}(\lambda) \cdot A$\\
+        $A'[i,] = A[i,] + \lambda A[j,]$\\
+        $A'[k,] = A[k,],\, k \neq i$
+
+        $Lin(A'[1,],\, \dots,\, A'[m,]) = Lin(A[1,],\, \dots,\, A[m,])$ --- верно и для элем. преобр. 2 и 3 типов
+        
+        $\Longrightarrow rk(A'[1,],\, \dots,\, A'[m,]) = rk(A[1,],\, \dots,\, A[m,])$.
+
+        Для доказательства про столбцлвый ранг докажем лемму:
+        \begin{lemma} 
+
+            Пусть $A' = UA,\, U \in GL(m, K);\; A[, i_1],\, \dots,\, A[, i_l]$ --- ЛЗС $\Longrightarrow A'[, i_1],\, \dots,\, A'[, i_l]$ --- ЛЗС
+            
+            \begin{proof}
+
+                $i_1 < \dots < i_l$   
+
+                $\alpha_1 A[, i_1] + \dots + \alpha_l A[, i_l] = 0,\, \exists s: \alpha_s \neq 0$
+
+                $A \cdot
+                \begin{pmatrix}
+                    0\\
+                    i_1: \alpha_1\\
+                    \vdots\\
+                    0\\
+                    \vdots\\
+                    i_l: \alpha_l\\
+                    0\\
+                \end{pmatrix}
+                = \sum_{k=1}^l \alpha_k A[, i_k] = 0$
+
+                $\Longrightarrow UA \cdot
+                \begin{pmatrix}
+                    \vdots\\
+                \end{pmatrix}
+                = 0$
+
+                $\Longrightarrow \sum_{k=1}^l \alpha_k A'[, i_k] = 0$
+
+            \end{proof}
+        \end{lemma}
+
+        Пусть $r$ --- столбцовый ранг $A$. 
+        
+        В $A$ есть $r$ ЛН столбцов $A[, i_1],\, \dots,\, A[, i_r] \Longrightarrow A'[, i_1],\, \dots,\, A'[, i_r]$ --- ЛНС 
+        (если ЛЗС, то т.к. $A = UA'$, по лемме $A[, i_1],\, \dots,\, A[, i_r]$ --- ЛЗС)
+
+        Любые $r+1$ столбцов $A$ --- ЛЗС $\Longrightarrow$ любые $r+1$ столбцов $A'$ --- ЛЗС.
+
+        Т.е. столбцовый ранг $A'$ равен $r$ для любой $A'=UA$.
+
+    \end{proof}
+\end{theorem-non}
+
+\follow Строчный ранг матрицы равен столбцовому рангу.
+\begin{proof}
+    
+    У $D = 
+    \begin{pmatrix}
+        E_r & 0\\
+        0   & 0\\
+    \end{pmatrix}$
+
+    Первые $r$ строк/столбцов ЛН, любые $r+1$ строка/столбец ЛЗ (есть 0) $\Longrightarrow$ для $D$ оба ранга равны $r$.
+
+    $A \leadsto D$ с помощью элем. преобр., которые по предложению не меняют оба ранга.
+
+\end{proof}
+
+$rk A =$ столбцовому рангу $=$ строчному рангу
