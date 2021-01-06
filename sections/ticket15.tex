@@ -1,1 +1,122 @@
 \section{Чётность и знак перестановки}
+\begin{conj}
+    Пусть $\pi \in S_n$. Говорят, что пара индексов $(i,j)$ образует инверсию для перестановки
+    $\pi$, если $i < j$ и $\pi(i) > \pi(j)$. Количество пар индексов от $1$ до $n$, образующих инверсию для
+    $\pi$ называется числом инверсий перестановки $\pi$ и обозначается через $inv(\pi)$
+\end{conj}
+
+\begin{conj}
+    Если $inv(\pi)$ четно, $\pi$ называется четной перестановкой, в противном случае - нечетной.
+\end{conj}
+
+\begin{conj}
+    Знак перестановки определяется следующим образом: $sgn(\pi) = (-1)^{inv(\pi)}$
+\end{conj}
+
+\begin{theorem-non}
+    Пусть $\pi \in S_n, \; \tau_{ij} \in S_n$ - транспозиция
+    
+    Тогда $sgn(\pi \cdot \tau_{ij}) = -sgn(\pi)$
+
+    \begin{proof}
+       Давайте посмотрим транспозицию $\tau_{ij}$ в случае, если она является элементарной 
+       
+       Тогда $\pi' = \pi \circ \tau_{ij} = \begin{pmatrix}
+           \dots & i & i + 1 & \dots \\
+           \dots & \pi(i + 1) & \pi(i) & \dots
+       \end{pmatrix}$
+
+       \begin{itemize}
+            \item Если $k, l \notin \{i, i+1\} \Longrightarrow (k,l)$ - инверсия для $\pi 
+                \Longleftrightarrow (k,l)$ - инверсия для $\pi'$ 
+            \item Если $k \in \{i, i+1\}, l \notin \{i, i+1\}$
+
+                Рассмотрим пары индексов $(i, l)$ и $(i+1, l)$, давайте посчитаем общее количестве инверсий для этих 
+                пар индексов. Заметим, что $l$ либо $ > i$ и $ > i+ 1$, либо либо $ < i$ и $ < i+ 1$.
+
+                Количество инверсий для множества $\{i,l\}$, плюс количество инверсий для множества $\{i+1, l\}$ одинаково для $\pi$ и $\pi'$.
+
+                То есть количество инверсий опять не поменялось 
+            \item Если $k, l \in \{i, i+1\} \Longrightarrow (k,l)$ - инверсия для $\pi \Longleftrightarrow 
+            (k,l)$ - не инверсия для $\pi'$
+
+            Таким образом $inv(\pi') = inv(\pi) \pm 1 \Longrightarrow sgn(\pi') = - sgn(\pi)$
+        \end{itemize}
+       
+        Теперь рассмотрим общий случай. $\tau_{ij} = \prod\limits_{l=1}^{2t+1} \sigma_l$, где $\sigma_l$ - элементарные транспозиции
+
+        Выходит, что $sgn \ \pi \cdot \tau_{ij} = sgn \ \pi \ (-1)^{2t+1} = -sgn \ \pi$
+    \end{proof}
+\end{theorem-non}
+
+\follow \; Пусть $\pi = \sigma_1 \dots sigma_s, \ \sigma_i$ - транспозиции
+
+Тогда $sgn \ \pi = (-1)^s$
+
+\begin{proof}
+    Используем индукцию по $s$.
+
+    База: $s = 1 \quad sgn(\sigma_1) = sgn(e \cdot \sigma_1) = -sgn \ e = -1$
+
+    Переход: $sgn(\sigma_1 \dots \sigma_s) = -sgn(\sigma_1 \dots \sigma_{s-1}) = -(-1)^{s-1} = (-1)^s$
+\end{proof}
+
+\begin{theorem2}
+    Пусть $\pi, \rho \in S_n$
+
+    Тогда $sgn(\pi \rho) = sgn \ \pi \cdot sgn \ \rho$
+
+    \begin{proof} \quad 
+
+        $\pi = \sigma_1 \dots \sigma_s$, где $\sigma_i$ - транспозиции
+
+        $\rho = \sigma_1' \dots \sigma_t'$, где $\sigma_i$ - транспозиции
+
+        $sgn \ \pi = (-1)^s$
+
+        $sgn \ \rho = (-1)^t$
+
+        $sgn(\pi \rho) = sgn(\sigma_1 \dots \sigma_s \sigma_1' \dots \sigma_t') =
+        (-1)^{s+t} = (-1)^s \cdot (-1)^t = sgn \ \pi \cdot sgn \ \rho$
+    \end{proof}
+\end{theorem2}
+
+\begin{theorem-non}
+    $A_n = \{ \sigma \in S_n \mid sgn \ \sigma = 1 \}$ - множество четных перестановок $S_n$
+
+    $A_n$ - подгруппа $S_n$
+
+    \begin{proof}
+        $e \in A_n$
+
+        $\pi, \rho \in A_n \Longrightarrow sgn \ \pi = sgn \ \rho = 1 \Longrightarrow sgn \ \pi \rho = 1 
+        \Longrightarrow \pi \rho \in A_n$
+
+        Действительно, пусть $\pi \in A_n$
+
+        $sgn(\pi \pi^{-1}) = sgn \ e = 1 = sgn \ \pi \cdot sgn \ \pi^{-1}
+        \Longrightarrow sgn \ \pi^{-1} = 1$ т.е. $\pi^{-1} \in A_n$
+    \end{proof}
+\end{theorem-non}
+
+\begin{theorem-non}
+    Пусть $n \geqslant 2$
+
+    Тогда $\abs{A_n} = \frac{n!}{2}$
+
+    \begin{proof}
+        Рассмотрим отображение $\lambda : A_n \longrightarrow S_n \setminus A_n$
+
+        $\sigma \longmapsto \sigma \tau_{i2}$ - нечетная
+
+        Если $\lambda(\sigma) = \lambda(\sigma')$, то $\sigma \tau_{12} = \sigma' \tau_{12} 
+        \Longrightarrow \sigma = \sigma'$. Доказали инъективность $\lambda$
+
+        Пусть $\pi \in S_n \setminus A_n$
+
+        $\pi \tau_{12} \in A_n$. Тогда $\lambda(\pi \tau_{12}) = \pi \tau_{12} \tau_{12} =
+        \pi \Longrightarrow Im(\lambda) = S_n \setminus A_n$ Доказали сюръективность
+
+        Таким образом $\abs{A_n} = \abs{S_n \setminus A_n} \Longrightarrow \abs{A_n} = \frac{n!}{2}$
+    \end{proof}
+\end{theorem-non}

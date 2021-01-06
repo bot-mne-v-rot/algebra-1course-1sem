@@ -1,1 +1,70 @@
 \section{Определитель блочно-треугольной матрицы}
+\begin{theorem-non}
+    (Определитель блочно-верхнетреугольной матрицы)
+
+    $A = \begin{pmatrix}
+        B & * \\
+        0 & C
+    \end{pmatrix}$, где $B \in M(m, R), \; C \in M(n - m, R)$
+
+    $\Longrightarrow \abs{A} = \abs{B} \cdot \abs{C}$
+
+    \begin{proof}
+        $\rho \in S_m, \sigma \in S_{n - m}$
+
+        Введем $[\rho, \sigma] \in S_n \quad [\rho, \sigma](j) = \begin{cases}
+            \rho(j), j \leqslant m \\
+            \sigma(j - m) + m, j \geqslant m + 1
+        \end{cases}$
+
+        $inv ([\rho, \sigma]) = inv \ \rho + inv \ \sigma$
+
+        $sgn ([\rho, \sigma]) = sgn \ \rho \cdot sgn \ \sigma$
+
+        $\abs{A} = \sum\limits_{\pi \in S_n} sgn \ \pi \cdot \prod\limits^n_{i = 1} a_{i, \pi(i)} = \oast$
+
+        Если $\exists i \geqslant m+1: \pi(i) \leqslant m \Longrightarrow a_{i, \pi(i)} = 0$
+
+        $\oast = \sum\limits_{\pi \in S_n} sgn \ \pi \cdot \prod\limits^n_{i = 1} a_{i, \pi(i)} = $
+
+        Сумму берем по тем $\pi$, что переводит числа от $m + 1$ до $n$ в числа $m + 1$ до $n$ 
+
+        $ \sum\limits_{\rho \in S_n} \sum\limits_{\sigma \in S_{n - m}} sgn [\rho, \sigma] \prod\limits^n_{i = 1} a_{i, [\rho, \sigma](i)} = 
+        \sum\limits_{\rho \in S_n} \sum\limits_{\sigma \in S_{n - m}} sgn \ \sigma \cdot sgn \ \rho \cdot \prod\limits^m_{i = 1} a_{i, \rho(i)} 
+        \prod\limits^{n - m}_{i = 1} a_{m + i, m + \sigma(i)} = $
+
+        $(\sum\limits_{\rho \in S_n} sgn \ \rho \prod\limits^m_{i = 1})
+        (\sum\limits_{\rho \in S_{n - m}} sgn \ \sigma \prod\limits^{n - m}_{i = 1} a_{m+i, m + \sigma(i)}) = 
+        \abs{B}$
+    \end{proof}
+\end{theorem-non}
+
+\follow \; $A = \begin{pmatrix}
+    B & 0 \\
+    * & C
+\end{pmatrix} \Longrightarrow \abs{A} = \abs{B} \cdot \abs{C}$
+
+\begin{proof}
+    $\abs{A} = \abs{A^T} = \begin{vmatrix}
+        B^T & * \\
+        0 & C^T
+    \end{vmatrix} = \abs{B^T} \cdot \abs{C^T} = \abs{B} \cdot \abs{C}$
+\end{proof}
+
+\follow \; $A = \begin{pmatrix}
+    a_{11} & \multicolumn{2}{c}{\text{\kern0.7em\smash{\raisebox{-1.5ex}{\Large *}}}} \\
+    & \ddots &  \\
+    \multicolumn{2}{c}{\text{\kern-0.7em\smash{\raisebox{0.3ex}{\Large 0}}}} & a_{nn}
+  \end{pmatrix} \Longrightarrow \abs{A} = a_{11} \dots a_{nn}$ 
+
+\begin{proof}
+    Воспользуемся индукцией по $n$
+
+    База: $n = 1$ - тривиально 
+
+    Переход: $\abs{A} \overset{\text{предл.}}{=} \begin{vmatrix}
+        a_{11} & \multicolumn{2}{c}{\text{\kern0.7em\smash{\raisebox{-1.5ex}{\Large *}}}} \\
+        & \ddots &  \\
+        \multicolumn{2}{c}{\text{\kern-0.7em\smash{\raisebox{0.3ex}{\Large 0}}}} & a_{n-1, n-1}
+      \end{vmatrix} \cdot a_{nn} \overset{\text{ИП}}{=} a_{11} \dots a_{n-1, n-1} \cdot a_{nn}$
+\end{proof}  
