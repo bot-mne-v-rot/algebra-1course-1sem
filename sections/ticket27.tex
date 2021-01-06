@@ -1,1 +1,131 @@
+% !TEX root = ../LinalColloc02.tex
+
 \section{Система образующих линейного пространства, свойства. Подпространство}
+
+\begin{conj}
+    $V$ -- ЛП/$K$, $v_1, \dots, v_n \in V$, 
+    $\alpha_1, \dots, \alpha_n \in K$.\\
+    $\alpha_1 v_1 + \dots + \alpha_n v_n $ -- \textbf{линейная комбинация}
+    векторов $v_1, \dots, v_n$ с коэффициентами
+    $\alpha_1, \dots, \alpha_n$.
+\end{conj}
+
+\begin{conj}
+    $V$ -- ЛП/$K$, $v_1, \dots, v_n \in V$.
+    $0 \cdot v_1 + 0 \cdot v_2 + \dots + 0 \cdot v_n$ -- 
+    \textbf{тривиальная} линейная комбинация.
+\end{conj}
+
+\begin{conj}
+    Множество всех линейных комбинаций называется 
+    \textbf{линейной оболочкой}.\\
+    $\Lin(v_1, ..., v_n) := 
+    \{\alpha_1 v_1 + \dots + \alpha_n v_n \mid
+    \alpha_1, \dots, \alpha_n \in K \}$ -- \textbf{линейная оболочка}
+    векторов $v_1, \dots, v_n$.
+\end{conj}
+
+\begin{conj}
+    $V$ -- ЛП/$K$, $v_1, \dots, v_n \in V$.\\
+    Если $\Lin(v_1, \dots, v_n) = V$, то $v_1, \dots, v_n$ --
+    \textbf{система образующих} (для) $V$ или \textbf{порождающая
+    система}.
+\end{conj}
+
+\begin{theorem-non}
+    Пусть $W = \Lin(v_1, \dots, v_n)$, $v_n \in 
+    \Lin(v_1, \dots, v_{n - 1})$. Тогда $W = \Lin(v_1, \dots, v_{n-1})$.
+\end{theorem-non}
+\begin{proof} $ $
+
+    $W \supset \Lin(v_1, \dots, v_{n-1})$:
+
+    Линейную комбинацию $n - 1$ векторов можно рассматривать
+    как линейную комбинацию $n$ векторов, где $n$-ый вектор
+    имеет нулевой коэффициент:\\
+    $\alpha_1 v_1 + \dots + \alpha_{n-1} v_{n-1} = 
+    \alpha_1 v_1 + \dots + \alpha_{n-1} v_{n-1} + 0 \cdot v_n$.
+
+    $W \subset \Lin(v_1, \dots, v_{n-1})$:
+
+    $v_n \in \Lin(v_1, \dots, v_{n - 1}) \Rightarrow
+    v_n = \beta_1 v_1 + \dots + \beta_{n - 1} v_{n - 1}$. Поэтому
+    любую линейную комбинацию $n$ векторов можно представить в виде
+    линейной комбинации $n - 1$ векторов:\\
+    $\alpha_1 v_1 + \dots + \alpha_n v_n =
+    \alpha_1 v_1 + \dots + \alpha_{n-1} v_{n-1} + \alpha_n \cdot
+    (\beta_1 v_1 + \dots + \beta_{n - 1} v_{n - 1}) =
+    (\alpha_1 + \alpha_n \beta_1) \cdot v_1 + 
+    (\alpha_2 + \alpha_n \beta_2) \cdot v_2 + \dots + 
+    (\alpha_{n-1} + \alpha_n \beta_{n-1}) \cdot v_{n-1}$
+
+\end{proof}
+
+\begin{conj}
+    $V$ -- \textbf{конечномерное} линейное пространство,
+    если $\exists n \in \N : \exists v_1, \dots, v_n \in V :
+    V = \Lin(v_1, \dots, v_n)$.
+\end{conj}
+
+\textbf{Примеры:}
+\begin{enumerate}
+    \item $M(m, n, K)$ -- конечномерное ЛП/$K$, т.к. 
+    $M(m, n, K) = \Lin( e_{ij} \mid i = 1..m, j = 1..n )$,
+    где $e_{ij}$ -- матричная единица.
+
+    \item $K[X]$ -- бесконечномерное.
+    \begin{proof}
+        Пусть $v_1, \dots, v_n$ -- система образующих. Пусть
+        $d := \max\{ \deg v_i \mid i = 1..n \}$. Тогда
+        $\max\{ \deg v \mid v \in \Lin(v_1, \dots, v_n) \} = d$, но
+        $K[X]$ содержит многочлены степени $d + 1$.
+    \end{proof}
+\end{enumerate}
+
+\begin{conj}
+    $W \subset V$ называется \textbf{линейным подпространством} $V$,
+    если выполняются след. свойства:
+    \begin{enumerate}
+        \item $\overline{0} \in W$ -- содержит $0$;
+        \item $W + W \subset W$ -- замкнуто относительно сложения;
+        \item $KW \subset W$ -- замкнуто относительно умножения.
+    \end{enumerate}
+\end{conj}
+
+\notice $W$ -- подгруппа относительно сложения.
+\begin{proof}
+    Наличие нуля и замкнутость относительно сложения выполняются.
+    Ещё нужно для подгруппы, чтобы были противоположные элементы.
+    Но т.к. $K$ -- поле, то наличие $-w = (-1) \cdot w$ (это равенство
+    было доказано ранее) гарантируется третьим свойством.
+\end{proof}
+
+\textbf{Примеры:}
+\begin{enumerate}
+    \item $0 = {\overline{0}}, V$ -- тривиальные подпространства $V$.
+    \item 
+    $V = K^3 = M(1, 3, K)$; \\
+    $W = \left\{ \begin{pmatrix*} \alpha \\ \beta \\ \gamma 
+    \end{pmatrix*} \bigm\vert \alpha + \beta + \gamma = 0 \right\}$
+    -- линейное подпространство $V$.
+
+    Более того,
+    $ \begin{pmatrix*} \alpha \\ \beta \\ \gamma \end{pmatrix*} =
+    \begin{pmatrix*} \alpha \\ \beta \\ -\alpha - \beta \end{pmatrix*} =
+    \alpha \begin{pmatrix*} 1 \\ 0 \\ -1 \end{pmatrix*} +
+    \beta \begin{pmatrix*} 0 \\ 1 \\ -1 \end{pmatrix*} $.
+    А значит $W = \Lin(\begin{pmatrix*} 1 \\ 0 \\ -1 \end{pmatrix*},
+    \begin{pmatrix*} 0 \\ 1 \\ -1 \end{pmatrix*})$.
+
+    \item $\Lin(v_1, \dots, v_n)$ -- линейная оболочка каких-то
+    векторов из линейного пространства тоже является линейным 
+    подпространством.
+
+    Можно говорить не ``линейная оболочка'', а ``порождаемое векторами
+    подпространство''.
+
+    \item $V = K[X]$;\\
+    $W_d = \{ f \mid \deg f \leqslant d \}$ -- лин. подпр-во $V$.
+
+    Более того, $W_d = \Lin(1, x, x^2, \dots, x^d)$.
+\end{enumerate}
