@@ -1,1 +1,97 @@
 \section{Линейные отображения. Примеры. Ядро и образ}
+
+\begin{conj}
+    
+    $V,W$ --- линейные пространства над полем $K$.
+
+    Отображение $\mathcal{A} : V \rightarrow W$ называется
+    линейным, если 
+    \begin{gather*}
+        \forall v_1, v_2 \in V,\; \forall \alpha_1, \alpha_2 \in K: \\
+        \mathcal{A}(\alpha_1 v_1 + \alpha_2 v_2) =
+        \alpha_1 \mathcal{A}(v_1) + \alpha_2 \mathcal{A}(v_2)    
+    \end{gather*}
+    
+
+    \notice Вместо этого условия можно требовать
+    \begin{gather*}
+        \begin{cases}
+            \mathcal{A}(v_1 + v_2) = \mathcal{A}(v_1) + \mathcal{A}(v_2) $\; (гомоморфизм групп)$ \\
+            \mathcal{A}(\alpha v) = \alpha \mathcal{A}(v)
+        \end{cases}    
+    \end{gather*}
+    
+    $Hom(V, W) := \{  \mathcal{A} \;|\; \mathcal{A}: V \rightarrow W \}$ ---
+    множество линейных отображений из $V$ в $W$.
+
+\end{conj}
+
+\textbf{Примеры:}
+\begin{enumerate}
+    \item $V = W = K[x] \\
+    \mathcal{A}: f \mapsto f'$
+    \item $id_{V}: V \mapsto V$ (изоморфизм на себя)
+    \item $\lambda \in K
+    [\lambda]: V \rightarrow V \\
+    v \mapsto \lambda v$ --- гомотетия \\
+    $id_v = [1]$
+    \item  $0: V \rightarrow W \\
+    v \mapsto 0$
+    \item $A \in M(m, n, K)$ \\
+    $\mathcal{A}: K^n \rightarrow K^m$ \\
+    $C \mapsto AC$,\; где $C$ --- столбец
+\end{enumerate}
+
+\begin{theorem-non}
+    $\mathcal{A} \in Hom(U, V), \mathcal{B} \in Hom(V, W)$
+
+    Тогда $\mathcal{B} \circ \mathcal{A} \in Hom(U,W)$
+
+    \begin{proof}
+        Очевидно
+    \end{proof}
+
+\end{theorem-non}
+
+\begin{conj}
+    Пусть $\mathcal{A} \in Hom(V,W)$
+
+    \begin{center}
+        $Im \mathcal{A} = \{ \mathcal{A}(v) \;|\; v \in V \}$ --- образ \\
+        $Ker \mathcal{A} = \{ v \;|\; \mathcal{A}(v) = 0 \}$ --- ядро
+    \end{center}
+
+\end{conj}
+
+\begin{theorem-non}
+    $ $ 
+
+    \begin{enumerate}
+        \item $Im \; \mathcal{A}$ --- подпространство $W$
+        \item $Ker \; \mathcal{A}$ --- подпространство $V$
+    \end{enumerate}
+    
+    \begin{proof}
+        $ $
+
+        \begin{enumerate}
+            \item 
+            \begin{flushleft}
+                $w_1, w_2 \in Im \; \mathcal{A}$ \\
+                $\alpha_1w_1 + \alpha_2w_2 \stackrel{?}{\in} Im \; \mathcal{A}$ \\
+                $w_1 = \mathcal{A}(v_1),\; w_2 = \mathcal{A}(v_2)$ \\
+                $\alpha_1w_1 + \alpha_2w_2 = \mathcal{A}(\alpha_1v_1 + \alpha_2v_2) \in Im \; \mathcal{A}$ 
+            \end{flushleft}
+            \item
+            \begin{flushleft}
+                $v_1, v_2 \in Ker \; \mathcal{A}$ \\
+                $\mathcal{A}(\alpha_1v_1 + \alpha_2v_2) = \alpha_1 \mathcal{A}(v_1) + \alpha_2 \mathcal{A}(v_2) = $ \\
+                $ = \alpha_1 \cdot 0 + \alpha_2 \cdot 0 = 0$ \\
+                $ \Longrightarrow \alpha_1 v_1 + \alpha_2 v_2 \in Ker \; \mathcal{A}$
+            \end{flushleft}
+        \end{enumerate}
+
+    \end{proof}
+
+\end{theorem-non}
+

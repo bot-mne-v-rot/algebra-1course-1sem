@@ -1,1 +1,60 @@
 \section{Теорема Крамера}
+
+\begin{theorem}
+    Крамера.
+
+    Пусть $A \in M(n, K), \; b \in K^n$
+
+    Два утверждения эквиваленты:
+    \begin{enumerate}
+        \item СЛУ с расширенной матрицей $(A | b)$ совместная определённая
+        \item $|A| \neq 0$
+    \end{enumerate}
+
+    \begin{proof}
+        $ $ 
+
+        $2 \Longrightarrow AX = b \Longleftrightarrow A^{-1}AX = A^{-1}b
+        \Longleftrightarrow X = A^{-1}b$
+
+        $1 \Longrightarrow 2$
+        
+        От противного: $|A| = 0 \Longrightarrow rkA < n$
+
+        Но у совместной определённой системы $rkA = n$ (противоречие)
+
+    \end{proof}
+
+\end{theorem}
+\subsection*{Формулы Крамера.}
+\begin{flushleft}
+    $A^{-1} = \frac{1}{|A|} \cdot \widetilde{A}$
+
+    $\widetilde{A} = (A_{ji}), \quad \widetilde{A}[ i, j ] = A_{ji}$
+
+    $x_i = b_1 A^{-1} [ i, 1 ] + \dots + b_n A^{-1} [ i, n ] = $
+
+    $ = \frac{1}{|A|} \underbrace{(b_1A_{1i} + \dots + b_nA_{ni})}_{\text{C}}$
+
+    $C = \begin{vmatrix}
+               &       & $i столб$ & & \\ 
+        a_{11} & \dots & b_1 & \dots & a_{1n} \\
+        \vdots & \dots & \vdots & \dots & \vdots \\
+        a_{n1} & \dots & b_n & \dots & a_nn
+    \end{vmatrix} = \frac{\Delta_i}{|A|}$
+
+    $\Delta_i = |A \{ A_i \rightsquigarrow b \} |$ (определитель матрицы $A$, у которой мы заменили $i$-ый столбец на столбец $b$)
+
+    $x_i = \frac{\Delta_i}{|A|}$ --- формулы Крамера.
+\end{flushleft}
+
+\begin{theorem-non}
+    Множество решений однородной системы  с $n$ неизвестными --- линейное подпространство в $K^n$.
+
+    \begin{proof}
+        Пусть $x_1, x_2$ --- решения, $\; \alpha_1, \alpha_2 \in K$    
+        
+        Тогда $А(\alpha_1 x_1 + \alpha_2 x_2) = \alpha_1 \underbrace{Ax_1}_{\text{ = 0}} + \alpha_2 \underbrace{Ax_2}_{\text{ = 0}} = 0$
+    \end{proof}
+    
+\end{theorem-non}
