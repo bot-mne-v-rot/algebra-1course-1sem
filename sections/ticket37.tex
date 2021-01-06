@@ -1,1 +1,63 @@
 \section{Ранг произведения матриц. Связь ранга с PDQ-разложением}
+
+\begin{theorem-non} 
+    \
+    \begin{enumerate}
+        \item $rk A^T = rk A$ (очевидно из доказанного выше)
+        \item $rk AB = min(rk A, rk B)$
+    \end{enumerate}
+
+    \begin{proof}
+        
+        Докажем, что утверждение $\Longleftrightarrow
+        \begin{cases}
+            rk AB \leq rk A\\
+            rk AB \leq rk B
+        \end{cases}$
+
+        $(AB)[, j] = \sum_i B[i,j] \cdot rk A[, i] \ \in Lin(A[, 1],\, A[, 2],\, \dots)$
+
+        $Lin((AB)[, 1],\, (AB)[, 2],\, \dots) \subset Lin(A[, 1],\, A[, 2],\, \dots) \Longrightarrow rk AB \leq rk A$
+
+        $rk AB = rk (AB)^T = rk (B^T A^T) \leq rk B^T = rk B$
+
+    \end{proof}
+
+\end{theorem-non}
+
+\follow Пусть $A \in M(m, n, K),\, U \in GL(m, K),\, V \in GL(n, K)$. Тогда $rk UA = rk AV = rk A$.
+\begin{proof}
+    
+    $rk UA \leq rk A$
+
+    $rk A = rk(U^{-1}UA) \leq rk UA \Longrightarrow rk UA = rk A$
+
+    Аналогично, $rk AV = rk A$.
+
+\end{proof}
+
+\follow $A \in M(m, n, K)$. Равносильны утверждения:
+\begin{enumerate}
+    \item $rk A = r$
+    \item $A = PDQ,\, P \in GL(m, K),\, Q \in GL(n, K),\, D =
+    \begin{pmatrix}
+        E_r & 0\\
+        0 & 0
+    \end{pmatrix}$
+\end{enumerate}
+
+\begin{proof}
+    \
+    \begin{itemize}
+        \item[$2 \Rightarrow 1:$] $rk D = r \Longrightarrow rk PDQ = r$
+        \item[$1 \Rightarrow 2:$] $A = PDQ,\, P \in GL(m, K),\, Q \in GL(n, K),\, D =
+        \begin{pmatrix}
+            E_l & 0\\
+            0 & 0
+        \end{pmatrix}$
+    
+            $rk PDQ = l \Longrightarrow r = l$
+    \end{itemize}
+
+\end{proof}
+
