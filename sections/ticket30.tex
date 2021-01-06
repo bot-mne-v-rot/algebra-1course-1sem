@@ -1,3 +1,119 @@
 % !TEX root = ../LinalColloc02.tex
 
 \section{Равносильные определения базиса}
+
+\begin{conj}
+    Пусть $V$ -- ЛП/$K$, $e_1, \dots, e_n \in V$.
+    Набор $(e_1, \dots, e_n)$ называется \textbf{базисом линейного 
+    пространства} $V$, если $\forall v \in V \,\,\, \exists! \alpha_1,
+    \dots, \alpha_n \in K : \alpha_1 e_1 + \dots + \alpha_n e_n = v$,
+    другими словами, любой вектор из пространства единственным образом
+    расскладывается в линейную комбинацию базисных векторов.
+\end{conj}
+
+\begin{conj}
+    Пусть $V, V'$ -- ЛП/$K$. Отображение $\phi : V \rightarrow V'$
+    называется \textbf{изоморфизмом линейных пространств}, если
+    выполняются два свойства:
+    \begin{enumerate}
+        \item $\phi$ -- биекция;
+        \item $\forall v_1, v_2 \in V \,\,\, \forall \alpha_1, \alpha_2
+        \in K \,\,\, \phi(\alpha_1 v_1 + \alpha_2 v_2) = \alpha_1
+        \phi (v_1) + \alpha_2 \phi(v_2)$.
+    \end{enumerate}
+\end{conj}
+
+$ $\\
+\textbf{Пример:}\\
+$\phi : M(m, n, k) \rightarrow M(n, m, k)$,\\
+$\phi : A \rightarrowtail A^T$, \\
+$\phi$ -- изоморфизм ЛП.
+
+\begin{theorem-non}
+\end{theorem-non}
+Пусть $V$ -- ЛП/$K$, $e_1, \dots, e_n \in V$.
+Тогда следующие свойства эквивалентны:
+\begin{enumerate}
+    \item $e_1, \dots, e_n$ -- базис $V$;
+    \item $\phi : K^n \rightarrow V$\\
+    $\phi : \begin{pmatrix}
+        \alpha_1 \\ \vdots \\ \alpha_n
+    \end{pmatrix} \rightarrowtail
+    \sum \limits_{i=1}^n \alpha_i e_i$\\
+    $\phi$ -- изоморфизм ЛП;
+    \item $e_1, \dots, e_n$ -- линейно независимая порождающая система,\\
+    т.е. $e_1, \dots, e_n$ -- ЛНС, и $V = \Lin(e_1, \dots, e_n)$;
+    \item $e_1, \dots, e_n$ -- минимальная порождающая система для $V$,
+    т.е. нельзя удалить из этого набора ни один вектор так, чтобы
+    система осталась порождающей;
+    \item $e_1, \dots, e_n$ -- максимальная линейно независимая система,
+    т.е. нельзя добавить ни один вектор из $V$ так, чтобы система
+    осталась линейно независимой.
+\end{enumerate}
+\begin{proof} $ $
+
+    \begin{itemize}
+        \item[$2 \Rightarrow 1$:] $\phi$ -- биекция $\Rightarrow$
+        $\forall v \in V \,\,\, \exists! \alpha_1, \dots, \alpha_n \in K :
+        \alpha_1 e_1 + \dots + \alpha_n e_n = v$, что по определению
+        означает, что $e_1, \dots, e_n$ -- базис $V$.
+
+        \item[$1 \Rightarrow 2$:] $\phi(\alpha a + \beta b) = 
+        \alpha \phi(a) + \beta \phi(b)$ очевидно выполняется
+        для любых $\alpha_1, \dots, \alpha_n \in K$. 
+        
+        Докажем теперь, что $\phi$ -- биекция. По опр. базиса $\forall
+        v \in V \,\,\, \exists! \alpha_1, \dots, \alpha_n \in K : 
+        \alpha_1 e_1 + \dots + \alpha_n e_n = v$. Заметим, что по сути
+        $\alpha_1, \dots, \alpha_n$ -- это $\begin{pmatrix}
+            \alpha_1 \\ \vdots \\ \alpha_n
+        \end{pmatrix}$, а $\alpha_1 e_1 + \dots + \alpha_n e_n$ -- это
+        $\phi\left(\begin{pmatrix}
+            \alpha_1 \\ \vdots \\ \alpha_n
+        \end{pmatrix}\right)$. Т.е. из опр. базиса видно, что каждому 
+        вектору из $V$ сопоставлен ровно один столбец из $K^n$, значит
+        $\phi$ -- биекция.
+
+        \item[$1 \Rightarrow 3$:] Раз любой вектор раскладывается
+        в линейную комбинацию базисных векторов, очевидно,
+        что $e_1, \dots, e_n$ -- порождающая система. Проверим линейную
+        независимость. Рассмотрим $\alpha_1 e_1 + \dots + \alpha_n e_n
+        = \overline{0} = 0 \cdot e_1 + \dots + 0 \cdot e_n$. Т.к.
+        $\overline{0}$ -- это тоже вектор, то в силу единственности
+        разложения $\alpha_1 = \dots = \alpha_n = 0$. Таким образом,
+        не существует нетривиальной ЛК $e_1, \dots, e_n$, равной
+        $\overline{0}$, значит $e_1, \dots, e_n$ -- ЛНС.
+
+        \item[$3 \Rightarrow 1$:] Т.к. это порождающая система,
+        необходимо доказать только единственность. 
+        Пусть $\alpha_1 e_1 + \dots + \alpha_n e_n =
+        \beta_1 e_1 + \dots + \beta_n e_n$. Перенесём всё в левую
+        часть и воспользуемся законом дистрибутивности.
+        $(\alpha_1 - \beta_1) e_1 + \dots + (\alpha_n - \beta_n) e_n =
+        \overline{0}$. $e_1, \dots, e_n$ -- ЛНС $\Rightarrow
+        \alpha_1 - \beta_1 = \dots = \alpha_n - \beta_n = 0 \Rightarrow
+        \alpha_1 = \beta_1, \dots, \alpha_n = \beta_n$.
+
+        \item[$3 \Rightarrow 4$:] Предположим, что $e_1, \dots, e_{i-1},
+        e_{i+1}, \dots, e_n$ -- порождающая система. НУО, $i = n$.
+        Т.е. $V = \Lin(e_1, \dots, e_{n-1})$. Но тогда $e_n \in
+        \Lin(e_1, \dots, e_{n-1}) \Rightarrow e_1, \dots, e_n$ -- ЛЗС.
+        Противоречие.
+
+        \item[$4 \Rightarrow 3$:] Предположим, что $e_1, \dots, e_n$ --
+        ЛЗС. НУО, $e_n \in \Lin(e_1, \dots, e_{n-1})$. Тогда
+        $V = \Lin(e_1, \dots, e_n) = \Lin(e_1, \dots, e_{n-1})
+        \Rightarrow e_1, \dots, e_{n-1}$ -- порождающая система.
+        Противоречие.
+
+        \item[$3 \Rightarrow 5$:] Это порождающая система $\Rightarrow
+        V = \Lin(e_1, \dots, e_n) \Rightarrow \forall v \in V \,\,\,
+        v \in \Lin(e_1, \dots, e_n) \Rightarrow\\ e_1, \dots, e_n, v$ --
+        ЛЗС.
+
+        \item[$5 \Rightarrow 3$:] Возьмём $v \in V$. $e_1, \dots, e_n$ --
+        ЛНС, но $e_1, \dots, e_n, v$ -- ЛЗС $\Rightarrow v \in
+        \Lin(e_1, \dots, e_n) \Rightarrow e_1, \dots, e_n$ -- порождающая
+        система.
+    \end{itemize}
+\end{proof}
