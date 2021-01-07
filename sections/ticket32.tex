@@ -1,3 +1,89 @@
 % !TEX root = ../LinalColloc02.tex
 
 \section{Размерность подпространства. Классификация конечномерных пространств}
+
+\begin{theorem-non}
+\end{theorem-non}
+Пусть $\dim V = n$; $W \subset V$ -- подпространство. Тогда:
+\begin{enumerate}
+    \item $W$ -- конечномерное; $\dim W \leq n$.
+    \item $\dim W = n \Rightarrow W = V$.
+\end{enumerate}
+\begin{proof} $ $
+
+    \begin{enumerate}
+        \item Предположим, что $W$ -- бесконечномерное или $\dim W > n$.
+        Если $W = \{\,\overline{0}\,\}$, то тут всё очевидно. 
+        Пусть $W \neq \{\,\overline{0}\,\}$. \\
+        Тогда $\exists w_1 \in W, w_1 \neq \overline{0}$. \\
+        Если $n \geqslant 1$, то $\exists w_1 \in W, 
+        w_1 \notin \Lin(w_1)$.\\
+        Если $n \geqslant 2$, то $\exists w_2 \in W, 
+        w_2 \notin \Lin(w_1, w_2)$.\\
+        \dots\\
+        $\exists w_n \in W, 
+        w_n \notin \Lin(w_1, \dots, w_{n-1})$.\\
+        Таким образом $w_1, \dots, w_n$ -- ЛНС и не базис $W$,
+        т.е. $\Lin(w_1, \dots, w_n) \subsetneq W$, но
+        $w_1, \dots, w_n \in V$ и $\dim V = n$ $\Rightarrow
+        w_1, \dots, w_n$ -- базис $V$ $\Rightarrow
+        \Lin(w_1, \dots, w_n) \subsetneq W \subset V = 
+        \Lin(w_1, \dots, w_n)$. Противоречие.
+
+        \item Пусть $w_1, \dots, w_n$ -- базис $W$. Тогда
+        $w_1, \dots, w_n$ -- ЛНС $\Rightarrow$ $w_1, \dots, w_n$ --
+        базис $V$ $\Rightarrow V = \Lin(w_1, \dots, w_n) = W$.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem-nonna}
+\end{theorem-nonna}
+Пусть $V, V'$ -- конечномерные ЛП/$K$. Тогда $V \cong V'
+\Leftrightarrow \dim V = \dim V'$.
+\begin{proof} $ $
+
+    \begin{itemize}
+        \item[``$\Longrightarrow$'':] 
+        Пусть $e_1, \dots, e_n$ -- базис $V$,
+        $\phi : V \,\, \widetilde{\to} \,\, V'$.
+        Возьмём $v' \in V'$. $\phi$ -- биекция $\Rightarrow
+        \exists \phi^{-1}$. Пусть $v := \phi^{-1}(v')$.
+        Пусть $v = \alpha_1 e_1 + \dots + \alpha_n e_n$.
+        Тогда $v' = \phi(\alpha_1 e_1 + \dots + \alpha_n e_n) =
+        \alpha_1 \phi(e_1) + \dots + \alpha_n \phi(e_n)$.
+        Т.к. $\phi$ -- биекция, то $\phi(e_1), \dots, \phi(e_n)$
+        различны. 
+        Пусть $v' = \beta_1 \phi(e_1) + \dots + \beta_n \phi(e_n)$.
+        Т.к. $v'$ -- изоморфизм, $v' = \phi(\beta_1 e_1 + 
+        \dots + \beta_n e_n)$. Т.к. $\phi$ -- биекция,
+        $v = \beta_1 e_1 + \dots + \beta_n e_n$.
+        Но $e_1, \dots, e_n$ -- базис $V$
+        $\Rightarrow \forall i \,\, \alpha_i = \beta_i$. Значит,
+        такое разложение $v'$ единственно и найдётся для всякого
+        $v' \Rightarrow \phi(e_1), \dots, \phi(e_n)$ -- базис $V'$
+        $\Rightarrow \dim V' = n = \dim V$.
+
+        \item[``$\Longleftarrow$'':]
+        $\dim V = \dim V' = n \Rightarrow V \cong K^n$ и $V' \cong K^n$.
+        Пусть $\phi : V \,\, \widetilde{\to} \,\, K^n$,
+        $\phi' : V' \,\, \widetilde{\to} \,\, K^n$. Тогда
+        Т.к. $\phi$ и $\phi'$ -- изоморфизмы (а значит и биекции).
+        То отн. $(\phi')^{-1} \circ \phi : V \,\, \widetilde{\to} \,\, V'$
+        будет изоморфизмом $V$ и $V'$.
+    \end{itemize}
+\end{proof}
+
+\follow $ $ Отношение изоморфности конечномерных ЛП -- 
+отношение эквивалентности.
+\begin{proof} $ $
+
+    \begin{enumerate}
+        \item Рефлексивность: всегда можно построить автоморфизм,
+        переводящий векторы ``1 к 1''.
+        \item Симметричность: очевидно, т.к. изоморфизм -- биекция.
+        \item Транзитивность: пусть $V_1, V_2, V_3$ -- конечномерные ЛП/$K$,
+        $V_1 \cong V_2$, $V_2 \cong V_3$ $\Rightarrow \dim V_1 = \dim V_2
+        = \dim V_3 \Rightarrow \dim V_1 = \dim V_3 \Rightarrow V_1 \cong V_3$.
+        
+    \end{enumerate}
+\end{proof}
