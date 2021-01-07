@@ -1,1 +1,59 @@
 \section{Линейность определителя по строкам и столбцам}
+\begin{theorem-non}
+    \begin{itemize} \quad 
+
+        \item[] Линейность определителя по строке
+         
+        \begin{enumerate}
+            \item Пусть матрица $A = \begin{pmatrix}
+                a_{11} & \dots & a_{1n} \\
+                \dots & \dots & \dots \\
+                a'_{k1} + a''_{k1} & \dots & a'_{kn} + a''_{kn} \\
+                \dots & \dots & \dots \\
+                a_{n1} & \dots & a_{nn}
+            \end{pmatrix} \Longrightarrow \abs{A} + \abs{A'} + \abs{A''}$ 
+
+            $A' = \begin{pmatrix}
+                a_{11} & \dots & a_{1n} \\
+                \dots & \dots & \dots \\
+                a'_{k1} & \dots & a'_{kn} \\
+                \dots & \dots & \dots \\
+                a_{n1} & \dots & a_{nn}
+            \end{pmatrix}$ \qquad 
+            $A'' = \begin{pmatrix}
+                a_{11} & \dots & a_{1n} \\
+                \dots & \dots & \dots \\
+                a''_{k1} & \dots & a''_{kn} \\
+                \dots & \dots & \dots \\
+                a_{n1} & \dots & a_{nn}
+            \end{pmatrix}$
+            \begin{proof}
+                $\abs{A} = \sum\limits_{\sigma} sgn \ \sigma \cdot a_{1, \sigma(1)} \dots 
+                \times (a'_{k, \sigma(k)} + a''_{k, \sigma(k)}) \times \dots a_{n, \sigma(n)} = \abs{A'} + \abs{A''}$
+            \end{proof}
+            \item $A = (a_{ij}), \qquad \lambda \in R, 1 \leqslant k \leqslant n$
+            
+            $B = \begin{pmatrix}
+                a_{11} & \dots & a_{1n} \\
+                \dots & \dots & \dots \\
+                \lambda a_{k1} & \dots & \lambda a_{kn} \\
+                \dots & \dots & \dots \\
+                a_{n1} & \dots & a_{nn}
+            \end{pmatrix} \Longrightarrow \abs{B} = \lambda \abs{A}$ 
+            \begin{proof}
+                $\abs{B} = \sum\limits_{\sigma} sgn \ \sigma \cdot a_{1, \sigma(1)} \dots 
+                \lambda a_{k, \sigma(k)} \dots a_{n, \sigma(n)} = \lambda \abs{A}$, так как $\lambda$ можно сразу вынести
+            \end{proof}
+        \end{enumerate}
+        \item[] Линейность определителя по столбцу 
+        \begin{proof}
+            Это утверждение сводится к утверждению про строки путем транспонирования
+
+            Транспонируем матрицу, определитель не меняется, затем применяем одно из двух свойств из 
+            предложения о линейности определителя по строке и потом снова транспонируем.
+        \end{proof} 
+    \end{itemize}
+\end{theorem-non}
+
+\follow \; Определитель с нулевой строкой или нулевым столбцом равен нулю. Это просто вытекает из второго свойства в предложении 
+о линейности определителя по строке.

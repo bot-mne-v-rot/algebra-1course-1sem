@@ -1,1 +1,72 @@
+% !TEX root = ../LinalColloc02.tex
+
 \section{Взаимная матрица. Явный вид обратной матрицы}
+
+\begin{conj}
+    
+    Пусть $A \in M(n, R)$
+
+    Взаимная (присоединённая, союзная) матрица $\widetilde{A} =
+        \begin{pmatrix}
+            A_{11} & A_{21} & \dots & A_{n1} \\
+            A_{12} & A_{22} & \dots & A_{n2} \\
+            \vdots & \vdots & \dots & \vdots \\
+            A_{1n} & A_{2n} & \dots & A_nn
+        \end{pmatrix}
+    $
+    
+    $A_{ji}$ --- алгебраическое дополнение. Стоит на позиции $(i, j)$.
+\end{conj}
+
+\begin{theorem-non}
+    
+    $A \cdot \widetilde{A} = \widetilde{A} \cdot A = |A| \cdot E_n =
+        \begin{pmatrix}
+            |A| & \dots & 0 \\
+            \vdots & \ddots & \vdots \\
+            0 & \dots & |A|
+        \end{pmatrix}
+    $
+
+
+    \begin{proof}
+        $(A \cdot \widetilde{A})_{ij} = a_{i1}A_{j1} + a_{i2}A_{j2} + \dots + a_{in}A_{jn} =
+            \begin{cases}
+                |A|, \; (i = j) \\
+                0, \; (i \neq j)
+            \end{cases}
+        $
+
+        \textbf{Пояснение:}
+        \emph{Мы здесь пользуемся разложением по строке,
+        которое равно определителю,}\\
+        \emph{и леммой о фальшивом разложении, при котором сумма равна 0.}
+    \end{proof}
+
+    \notice Для $\widetilde{A} \cdot A = |A| \cdot E_n$ --- аналогично,
+    используя разложение по столбцу
+
+\end{theorem-non}
+
+\follow Пусть $A \in M(n, K), K$ --- поле, $|A| \neq 0$ (для кольца $|A| \in R^*$)
+
+    Тогда $A^{-1} = |A|^{-1} \cdot \widetilde{A}$
+    \begin{proof}
+        $A \cdot |A|^{-1} \cdot \widetilde{A} = E_n$
+        
+        $|A|^{-1} \cdot \widetilde{A} \cdot A = E_n$
+    \end{proof}
+
+\follow $|A| \in R^* \Longrightarrow A \in GL (n, R)$ (Доказывается аналогично)
+
+\notice Верно и обратное. $A \in GL(n, R) \Longrightarrow |A| \in R^*$
+    \begin{proof}
+        $A^{-1} \cdot A = A \cdot A^{-1} = E_n$ 
+
+        $|A^{-1} \cdot A| \stackrel{*}{=} |A^{-1}| \cdot |A| = |A \cdot A^{-1}| \stackrel{*}{=} |A| \cdot |A^{-1}| = 1$
+
+        $*$ --- проверили только для поля.
+
+        $\Longrightarrow |A| \in R^*$ 
+        
+    \end{proof}

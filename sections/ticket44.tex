@@ -1,1 +1,52 @@
 \section{Связь между размерностями ядра и образа}
+
+\begin{theorem-non}
+
+    Пусть $dim \; V = n < \inf$ \\
+    $\mathcal{A} \in Hom(V, W)$ \\
+    Тогда $Im \; \mathcal{A}$ конечномерен и
+    $dim Ker \; \mathcal{A} + dim Im \; \mathcal{A} = n$
+
+    \begin{proof}
+        
+        $Ker \; \mathcal{A} \subset V$
+
+        $\Longrightarrow Ker \; \mathcal{A}$ конечномерен. 
+        
+        $\underbrace{e_1, \dots, e_m}_{\text{ЛНС в V}}$ --- любой базис $Ker \; \mathcal{A}$
+
+        Пусть $e_{m + 1}, \dots, e_n$ --- дополнение до базиса $V$.
+
+        Докажем, что $\mathcal{A}(e_{m+1}), \dots, \mathcal{A}(e_n)$ ---
+        базис $Im \; \mathcal{A}$.
+
+        \begin{proof}
+            \begin{gather*}
+                w \in Im \; \mathcal{A} \Longrightarrow w = \mathcal{A}(v), v \in V \\    
+                v = \alpha_1e_1 + \dots + \alpha_ne_n \\
+                \mathcal{A}(v) =
+                \underbrace{\alpha_1\mathcal{A}(e_1)}_{\text{ = 0 }} +
+                \dots +
+                \underbrace{\alpha_n\mathcal{A}(e_n)}_{\text{ = 0}} +
+                \alpha_{m+1}\mathcal{A}(e_{m+1}) + \dots + \alpha_n\mathcal{A}(e_n) = \\
+                = \alpha_{m+1}\mathcal{A}(e_{m+1}) + \dots + \alpha_n\mathcal{A}(e_n) \in Lin(\mathcal{A}(e_{m+1}) + \dots + \mathcal{A}(e_n)) \\ 
+            \end{gather*}
+
+            Проверим их линейную независимость:
+
+            \begin{center}
+                $\beta_1\mathcal{A}(e_{m+1}) + \dots + \beta_{n - m}\mathcal{A}(e_{n}) = 0$ \\
+                 $\mathcal{A}(
+                     \underbrace{\beta_1e_{m+1} + \dots + \beta_{n-m}e_n}_{\text{$\Rightarrow \in Ker \; \mathcal{A}$}}
+                     ) = 0$ \\
+                    $\beta_1e_{m+1} + \dots + \beta_{n-m}e_n = \alpha_1e_1 + \dots + \alpha_me_m$ \\
+                    $e_1, \dots, e_n$ --- ЛНС $\Longrightarrow $ все $\alpha_i$ и $ \beta_i = 0$ \\
+                    Т.о. $\mathcal{A}(e_{m+1}), \dots, \mathcal{A}(e_n)$ --- базис $Im \; \mathcal{A}$ \\
+                    $dim \; Im \; \mathcal{A} = n - m = dim \; V - dim \; Ker \; \mathcal{A}$
+            \end{center}
+
+
+        \end{proof}
+    \end{proof}
+
+\end{theorem-non}

@@ -1,1 +1,28 @@
 \section{Критерий обратимости матрицы в терминах определителя}
+\begin{theorem-non}
+    $K $ - поле, матрица $ A \in M(n, K)$ обратима $\Longleftrightarrow \abs{A} \neq 0$
+
+    \begin{proof} \quad
+
+        \begin{enumerate}
+            \item[``$\Longrightarrow$'':] $A \in GL(n, K)$ 
+            
+            $A = P_1 \dots P_m, P_i$ - элементарные матрицы
+        
+            Значит $A$ получается из единичной матрицы $m$ элементарными преобразованиями
+
+            $\abs{E_n} \neq 0 \Longrightarrow \abs{A} \neq 0$, так как при элементарном прекобразовании
+            из не нуля получить ноль нельзя.
+            \item[``$\Longleftarrow$'':] Пусть $A \notin GL(n, K)$. 
+            Тогда $A = PDQ$, причем $D = \begin{pmatrix}
+                E_r & 0 \\
+                0 & 0
+            \end{pmatrix}$, где $r < n$
+            
+            Тогда $\abs{D} = 0$, так как в $D$ есть нулевая строка $\Longrightarrow \abs{A} = 0$, так как 
+            из нуля элементарными преобразованиями не ноль не получить. 
+
+            Пришли к противоречию. Значит $A \in GL(n, K)$.
+        \end{enumerate}
+    \end{proof}
+\end{theorem-non}

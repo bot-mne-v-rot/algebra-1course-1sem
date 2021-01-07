@@ -1,1 +1,52 @@
+% !TEX root = ../LinalColloc02.tex
+
 \section{Теорема о линейной зависимости линейных комбинаций}
+
+\begin{theorem-nonna}
+\end{theorem-nonna}
+Пусть $v_1, \dots, v_m \in V$, $w_1, \dots, w_n \in 
+\Lin(v_1, \dots, v_m)$, $n > m$.
+Тогда $w_1, \dots, w_n$ -- ЛЗС.
+\begin{proof} Индукция по $m$.
+
+    \textbf{База.} $m = 1$:
+
+    $w_1, \dots, w_n \in \Lin(v_1) \Rightarrow w_1 := \alpha v_1$.\\
+    Если $\alpha = 0$, то $w_1 = 0$ $\Rightarrow w_1, \dots, w_n$ -- ЛЗС
+    по доказанному ранее свойству. \\
+    Если $\alpha \neq 0$, то $v_1 = \alpha^{-1} w_1 \Rightarrow
+    v_1 \in \Lin(w_1) \Rightarrow w_1, \dots, w_n \in \Lin(w_1)
+    \Rightarrow w_1, w_2$ -- ЛЗС $\Rightarrow w_1, \dots, w_n$ -- ЛЗС
+    по доказанному ранее свойству.
+
+    \textbf{Переход.} $m - 1 \longrightarrow m$:
+
+    $w_1 = \alpha_{11} v_1 + \dots + \alpha_{1m} v_m$,\\
+    $w_2 = \alpha_{21} v_1 + \dots + \alpha_{2m} v_m$,\\
+    \vdots\\
+    $w_n = \alpha_{n1} v_1 + \dots + \alpha_{nm} v_m$.
+
+    Рассмотрим случаи:
+    \begin{itemize}
+        \item $\alpha_{1m} = \alpha_{2m} = \dots = \alpha_{nm} = 0$\\
+        $\Rightarrow w_1, \dots, w_n \in \Lin(v_1, \dots, v_{m-1})$.\\
+        $n > m > m - 1 \xRightarrow{\text{ИП}} w_1, \dots, w_n$ -- ЛЗС. 
+
+        \item $\exists j : \alpha_{jm} \neq 0$. НУО, $j = n$.\\
+        Тогда $w_i - \frac{\alpha_{im}}{\alpha_{nm}} w_n \in
+        \Lin(v_1, \dots, v_{m-1})$, т.к. мы занулили коэф. при $v_m$, \\
+        $n > m \Rightarrow n - 1 > m - 1 \xRightarrow{\text{ИП}}
+        w_1 - \frac{\alpha_{1m}}{\alpha_{nm}} w_n, \dots,
+        w_{n - 1} - \frac{\alpha_{(n-1)m}}{\alpha_{nm}} w_n$ -- ЛЗС\\
+        $\Rightarrow \exists \beta_1, \dots, \beta_{n-1} \mid 
+        \exists \beta_i \neq 0$ и $ \sum \limits_{i = 1}^{n-1}
+        \beta_i (w_i - \frac{\alpha_{im}}{\alpha_{nm}} w_n) = 0$\\
+        $\Rightarrow \sum \limits_{i = 1}^{n-1}
+        \beta_i (w_i - \frac{\alpha_{im}}{\alpha_{nm}} w_n) :=
+        \beta_1 w_1 + \dots + \beta_{n-1} w_{n-1} + \gamma w_n = 0$,
+        независимо от $\gamma$ какой-то коэф. $\beta_i \neq 0$ по ИП,
+        поэтому это будет нетривиальная ЛК $w_1, \dots, w_n$
+        $\Rightarrow w_1, \dots, w_n$ -- ЛЗС.
+    \end{itemize}
+    
+\end{proof}

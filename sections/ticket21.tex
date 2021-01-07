@@ -1,1 +1,44 @@
 \section{Определитель произведения матриц}
+\begin{theorem-non}
+    Пусть $A, B \in M(n, K). K$ - поле. Тогда $\abs{AB} = \abs{A} \cdot \abs{B}$
+
+    \begin{proof} \quad 
+
+        \begin{enumerate}
+            \item Пусть $A \notin GL(n, K)$
+            
+            $\exists $ элементарные матрицы $ P_1, \dots, P_m: P_1 \dots P_m A$
+            - ступенчатая матрица с менее, чем $n$ ненулевыми строками
+            (Иначе $P_1 \dots P_m A Q_1 \dots Q_l = E_r \Longrightarrow A \in GL(n, K)$) 
+            
+            $\Longrightarrow P_1 \dots P_m A B$ содержит нулевую строку
+
+            $P_1 \dots P_m A B \notin GL(n, K) \Longrightarrow A B \notin GL(n, K)$
+
+            $\begin{cases}
+                \abs{AB} = 0 \\
+                \abs{A} \cdot \abs{B} = 0$, так как $ \abs{A} = 0
+            \end{cases} \Longrightarrow \abs{AB} = \abs{A} \cdot \abs{B}$
+            \item Пусть $A \in GL(n, K) \Longrightarrow A = P_1 \dots P_m$, где 
+            $P_i$ - элементарные матрицы.
+
+            Воспользуемся индукцией по $m$
+
+            База: $m = 0 \quad A = E_n$
+
+            $\abs{AB} = \abs{E_n B} = \abs{B} = \abs{E_n} \cdot \abs{B} = \abs{A} \cdot \abs{B}$
+
+            Переход $m - 1 \longmapsto m$: \quad
+            $\abs{AB} = \abs{P_1 \cdot P_2 \dots P_m B} = \lambda_1 \cdot \abs{P_2 \dots P_n B} \overset{\text{ИП}}{=} \oast, $ 
+            
+            где $ \lambda_1 = \begin{cases}
+                1, $ если $ P_1 = T_{ij}(\lambda) \\
+                -1, $ если $ P_1 = S_{ij} \\
+                \varepsilon, $ если $ P_1 = D_{i}(\varepsilon)
+            \end{cases} = \abs{P_1}$
+
+            $\oast \overset{\text{ИП}}{=} \lambda_1 \cdot \abs{P_2 \dots P_n} \cdot \abs{B} = 
+            \abs{P_1 P_2 \dots P_n} \cdot \abs{B} = \abs{A} \cdot \abs{B}$
+        \end{enumerate}
+    \end{proof}
+\end{theorem-non}
