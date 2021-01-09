@@ -1,3 +1,5 @@
+% !TEX root = ../LinalColloc02.tex
+
 \section{Минорный ранг}
 
 \begin{conj} 
@@ -10,23 +12,23 @@
 \
 \begin{theorem-non} 
     
-    Пусть $rk A = r$. Тогда в $A$ есть ненулевой минор порядка $r$ и нет ненулевого минора порядка больше $r$.
+    Пусть $\rk A = r$. Тогда в $A$ есть ненулевой минор порядка $r$ и нет ненулевого минора порядка больше $r$.
 
     \begin{proof}
         
         В $A$ есть $r$ ЛН столбцов. $A'$ --- подматрица из этих столбцов.
 
-        $rk A' = r \Longrightarrow$ в $A'$ есть $r$ ЛН строк. $A''$ --- подматрица из этих строк.
+        $\rk A' = r \Longrightarrow$ в $A'$ есть $r$ ЛН строк. $A''$ --- подматрица из этих строк.
 
         $A'' \in M(r, K)$
 
-        $rk A'' = r \Longrightarrow |A''| \neq 0 \Longrightarrow$ существует ненулевой минор порядка $r$.
+        $\rk A'' = r \Longrightarrow |A''| \neq 0 \Longrightarrow$ существует ненулевой минор порядка $r$.
 
         Пусть $s > r$, $B$ --- подматрица $A$ $s \times s$, т.ч. $|B| \neq 0$
 
         Пусть $C$ --- подматрица $A$ $m \times s$, т.ч. $B$ --- подматрица $C$.
 
-        Столбцы $B$ ЛН $\Longrightarrow$ столбцы $C$ ЛН (очевидно) $\Longrightarrow$ в $A$ есть $s$ ЛН столбцов $\Longrightarrow rk A \geq s > r$ --- противоречие.
+        Столбцы $B$ ЛН $\Longrightarrow$ столбцы $C$ ЛН (очевидно) $\Longrightarrow$ в $A$ есть $s$ ЛН столбцов $\Longrightarrow \rk A \geq s > r$ --- противоречие.
 
     \end{proof}
 
