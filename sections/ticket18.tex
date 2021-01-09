@@ -1,3 +1,5 @@
+% !TEX root = ../LinalColloc02.tex
+
 \section{Кососимметричность определителя по строкам и столбцам}
 \begin{theorem-non}
     \begin{itemize} \quad 
@@ -15,14 +17,14 @@
             $\abs{A} = \sum\limits_{\sigma \in A_n} \prod\limits_{k = 1}^n a_{k, \sigma(k)} - 
             \sum\limits_{\sigma \in S_n \setminus A_n} \prod\limits_{k = 1}^n a_{k, \sigma(k)} =
             \sum\limits_{\sigma \in A_n} \prod\limits_{k = 1}^n a_{k, \sigma(k)} 
-            - \sum\limits_{\sigma \in A_n} \prod\limits_{k = 1}^n a_k (\sigma \tau_{ij})(k) =$
+            - \sum\limits_{\sigma \in A_n} \prod\limits_{k = 1}^n a_{k, (\sigma \tau_{ij})(k)} =$
 
-            $\sum\limits_{\sigma \in A_n} (\prod\limits_{k = 1}^n a_{k, \sigma(k)} - \prod\limits_{k = 1}^n a_{k, \sigma \tau_{ij}(k)}) = \oast$
+            $\sum\limits_{\sigma \in A_n} (\prod\limits_{k = 1}^n a_{k, \sigma(k)} - \prod\limits_{k = 1}^n a_{k, (\sigma \tau_{ij})(k)}) = \oast$
 
             Заметим, что:
             \begin{itemize}
-                \item[] $a_{i, \sigma \tau_{ij} (i)} = a_{i, \sigma(j)} = a_{j, \sigma(j)}$ 
-                \item[] $a_{j, \sigma \tau_{ij} (j)} = a_{j, \sigma(i)} = a_{i, \sigma(i)}$ 
+                \item[] $a_{i, (\sigma \tau_{ij}) (i)} = a_{i, \sigma(j)} = a_{j, \sigma(j)}$ 
+                \item[] $a_{j, (\sigma \tau_{ij}) (j)} = a_{j, \sigma(i)} = a_{i, \sigma(i)}$ 
             \end{itemize}
 
             $\oast = \sum\limits_{\sigma \in A_n} (0 - 0) = 0$

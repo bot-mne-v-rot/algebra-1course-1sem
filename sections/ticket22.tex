@@ -1,3 +1,5 @@
+% !TEX root = ../LinalColloc02.tex
+
 \section{Определитель блочно-треугольной матрицы}
 \begin{theorem-non}
     (Определитель блочно-верхнетреугольной матрицы)
@@ -29,11 +31,11 @@
 
         Сумму берем по тем $\pi$, что переводит числа от $m + 1$ до $n$ в числа $m + 1$ до $n$ 
 
-        $ \sum\limits_{\rho \in S_n} \sum\limits_{\sigma \in S_{n - m}} sgn [\rho, \sigma] \prod\limits^n_{i = 1} a_{i, [\rho, \sigma](i)} = 
-        \sum\limits_{\rho \in S_n} \sum\limits_{\sigma \in S_{n - m}} sgn \ \sigma \cdot sgn \ \rho \cdot \prod\limits^m_{i = 1} a_{i, \rho(i)} 
+        $ \sum\limits_{\rho \in S_m} \sum\limits_{\sigma \in S_{n - m}} sgn [\rho, \sigma] \prod\limits^n_{i = 1} a_{i, [\rho, \sigma](i)} = 
+        \sum\limits_{\rho \in S_m} \sum\limits_{\sigma \in S_{n - m}} sgn \ \sigma \cdot sgn \ \rho \cdot \prod\limits^m_{i = 1} a_{i, \rho(i)} 
         \prod\limits^{n - m}_{i = 1} a_{m + i, m + \sigma(i)} = $
 
-        $(\sum\limits_{\rho \in S_n} sgn \ \rho \prod\limits^m_{i = 1} a_{i, \rho(i)})
+        $(\sum\limits_{\rho \in S_m} sgn \ \rho \prod\limits^m_{i = 1} a_{i, \rho(i)})
         (\sum\limits_{\rho \in S_{n - m}} sgn \ \sigma \prod\limits^{n - m}_{i = 1} a_{m+i, m + \sigma(i)}) = 
         \abs{B} \cdot \abs{C}$
     \end{proof}
