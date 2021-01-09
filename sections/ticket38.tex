@@ -1,3 +1,5 @@
+% !TEX root = ../LinalColloc02.tex
+
 \section{Условия эквивалентные обратимости матрицы}
 
 \begin{theorem-non} 
@@ -9,7 +11,7 @@
         \item $|A| \neq 0$ (вырожденная)
         \item $A$ обратима слева
         \item $A$ обратима справа
-        \item $rk A = n$
+        \item $\rk A = n$
         \item Столбцы $A$ --- ЛНС
         \item Строки $A$ --- ЛНС
     \end{enumerate}
@@ -24,10 +26,10 @@
             \item[$1 \Rightarrow 4:$] тривиально 
             \item[$3 \Rightarrow 5:$] $BA = E_n$
             
-            $rk BA \leq rk A,\, rk BA = rk E_n = n \Longrightarrow rk A = n$
+            $\rk BA \leq \rk A,\, \rk BA = \rk E_n = n \Longrightarrow \rk A = n$
 
             \item[$4 \Rightarrow 5:$] аналогично
-            \item[$5 \Rightarrow 1:$] $A = PDQ$, тогда по утверждению выше $rk D = n \Longrightarrow D = E_n$
+            \item[$5 \Rightarrow 1:$] $A = PDQ$, тогда по утверждению выше $\rk D = n \Longrightarrow D = E_n$
             
             $A = PQ \in GL(n, K)$
         \end{itemize}
