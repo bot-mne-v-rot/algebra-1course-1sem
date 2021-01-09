@@ -1,3 +1,5 @@
+% !TEX root = ../LinalColloc02.tex
+
 \section{Теорема Крамера}
 
 \begin{theorem}
@@ -34,14 +36,14 @@
 
     $x_i = b_1 A^{-1} [ i, 1 ] + \dots + b_n A^{-1} [ i, n ] = $
 
-    $ = \frac{1}{|A|} \underbrace{(b_1A_{1i} + \dots + b_nA_{ni})}_{\text{C}}$
+    $ = \frac{1}{|A|} \underbrace{(b_1A_{1i} + \dots + b_nA_{ni})}_{\Delta_i}$
 
-    $C = \begin{vmatrix}
+    $\Delta_i = \begin{vmatrix}
                &       & $i столб$ & & \\ 
         a_{11} & \dots & b_1 & \dots & a_{1n} \\
         \vdots & \dots & \vdots & \dots & \vdots \\
         a_{n1} & \dots & b_n & \dots & a_nn
-    \end{vmatrix} = \frac{\Delta_i}{|A|}$
+    \end{vmatrix}$
 
     $\Delta_i = |A \{ A_i \rightsquigarrow b \} |$ (определитель матрицы $A$, у которой мы заменили $i$-ый столбец на столбец $b$)
 

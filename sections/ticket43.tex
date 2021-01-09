@@ -1,3 +1,5 @@
+% !TEX root = ../LinalColloc02.tex
+
 \section{Линейные отображения. Примеры. Ядро и образ}
 
 \begin{conj}
@@ -21,7 +23,7 @@
         \end{cases}    
     \end{gather*}
     
-    $Hom(V, W) := \{  \mathcal{A} \;|\; \mathcal{A}: V \rightarrow W \}$ ---
+    $\Hom(V, W) := \{  \mathcal{A} \;|\; \mathcal{A}: V \rightarrow W \}$ ---
     множество линейных отображений из $V$ в $W$.
 
 \end{conj}
@@ -30,11 +32,12 @@
 \begin{enumerate}
     \item $V = W = K[x] \\
     \mathcal{A}: f \mapsto f'$
-    \item $id_{V}: V \mapsto V$ (изоморфизм на себя)
-    \item $\lambda \in K
-    [\lambda]: V \rightarrow V \\
-    v \mapsto \lambda v$ --- гомотетия \\
-    $id_v = [1]$
+    \item $\operatorname{id}_V: V \mapsto V$ (изоморфизм на себя)
+    \item $\lambda \in K$ \\
+    $[\lambda] : V \rightarrow V \\
+    v \mapsto \lambda v$ --- гомотетия; \\
+    $\operatorname{id}_V = [1]$ --- тождественное отображение
+    является частным случаем.
     \item  $0: V \rightarrow W \\
     v \mapsto 0$
     \item $A \in M(m, n, K)$ \\
@@ -43,9 +46,9 @@
 \end{enumerate}
 
 \begin{theorem-non}
-    $\mathcal{A} \in Hom(U, V), \mathcal{B} \in Hom(V, W)$
+    $\mathcal{A} \in \Hom(U, V), \mathcal{B} \in \Hom(V, W)$
 
-    Тогда $\mathcal{B} \circ \mathcal{A} \in Hom(U,W)$
+    Тогда $\mathcal{B} \circ \mathcal{A} \in \Hom(U,W)$
 
     \begin{proof}
         Очевидно
@@ -54,11 +57,11 @@
 \end{theorem-non}
 
 \begin{conj}
-    Пусть $\mathcal{A} \in Hom(V,W)$
+    Пусть $\mathcal{A} \in \Hom(V,W)$
 
     \begin{center}
-        $Im \mathcal{A} = \{ \mathcal{A}(v) \;|\; v \in V \}$ --- образ \\
-        $Ker \mathcal{A} = \{ v \;|\; \mathcal{A}(v) = 0 \}$ --- ядро
+        $\Imm \mathcal{A} = \{ \mathcal{A}(v) \;|\; v \in V \}$ --- образ \\
+        $\Ker \mathcal{A} = \{ v \;|\; \mathcal{A}(v) = 0 \}$ --- ядро
     \end{center}
 
 \end{conj}
@@ -67,8 +70,8 @@
     $ $ 
 
     \begin{enumerate}
-        \item $Im \; \mathcal{A}$ --- подпространство $W$
-        \item $Ker \; \mathcal{A}$ --- подпространство $V$
+        \item $\Imm \mathcal{A}$ --- подпространство $W$
+        \item $\Ker \mathcal{A}$ --- подпространство $V$
     \end{enumerate}
     
     \begin{proof}
@@ -77,17 +80,17 @@
         \begin{enumerate}
             \item 
             \begin{flushleft}
-                $w_1, w_2 \in Im \; \mathcal{A}$ \\
-                $\alpha_1w_1 + \alpha_2w_2 \stackrel{?}{\in} Im \; \mathcal{A}$ \\
+                $w_1, w_2 \in \Imm \mathcal{A}$ \\
+                $\alpha_1w_1 + \alpha_2w_2 \stackrel{?}{\in} \Imm \mathcal{A}$ \\
                 $w_1 = \mathcal{A}(v_1),\; w_2 = \mathcal{A}(v_2)$ \\
-                $\alpha_1w_1 + \alpha_2w_2 = \mathcal{A}(\alpha_1v_1 + \alpha_2v_2) \in Im \; \mathcal{A}$ 
+                $\alpha_1w_1 + \alpha_2w_2 = \mathcal{A}(\alpha_1v_1 + \alpha_2v_2) \in \Imm \mathcal{A}$ 
             \end{flushleft}
             \item
             \begin{flushleft}
-                $v_1, v_2 \in Ker \; \mathcal{A}$ \\
+                $v_1, v_2 \in \Ker \mathcal{A}$ \\
                 $\mathcal{A}(\alpha_1v_1 + \alpha_2v_2) = \alpha_1 \mathcal{A}(v_1) + \alpha_2 \mathcal{A}(v_2) = $ \\
                 $ = \alpha_1 \cdot 0 + \alpha_2 \cdot 0 = 0$ \\
-                $ \Longrightarrow \alpha_1 v_1 + \alpha_2 v_2 \in Ker \; \mathcal{A}$
+                $ \Longrightarrow \alpha_1 v_1 + \alpha_2 v_2 \in \Ker \mathcal{A}$
             \end{flushleft}
         \end{enumerate}
 
