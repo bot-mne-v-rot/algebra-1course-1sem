@@ -32,7 +32,7 @@
         \left(-\frac{\alpha_{j-1}}{\alpha_j}\right) v_{j-1} + 
         \left(-\frac{\alpha_{j+1}}{\alpha_j}\right) v_{j+1} + \dots +
         \left(-\frac{\alpha_n}{\alpha_j}\right) v_n 
-        \in \Lin(v_1, \dots, v_n)
+        \in \Lin(v_1, \dots, v_{j-1}, v_{j+1}, \dots, v_n)
     \end{align*}
     ``$2 \Rightarrow 1$'':
     \begin{align*}
@@ -42,7 +42,7 @@
         \sum_{i=1}^n \beta_i v_i = 0 \text{, где } \beta_j = -1.
     \end{align*}
     $\quad \,\,$ Получаем нетривиальную линейную комбинацию, т.к. 
-    при векторе $v_j$ коэффициент $1 \neq 0$.
+    при векторе $v_j$ коэффициент $-1 \neq 0$.
 
 \end{proof}
 
