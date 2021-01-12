@@ -33,28 +33,27 @@
 \end{theorem2}
 
 \follow \; $K$ - поле, $A \in M(m, n, K)$, тогда $A$ можно представить в виде $A = PDQ$, где
-$P \in GL(m, K), Q \in (n, K), D = \begin{pmatrix}
+$P \in GL(m, K), Q \in GL(n, K), D = \begin{pmatrix}
     E_r & 0 \\
     0 & 0
 \end{pmatrix}$, при этом $P, Q$ - произведения элементарных матриц.
+\begin{proof}
+    $P_t \dots P_1 \cdot A \cdot Q_1 \dots Q_s = \begin{pmatrix}
+        E_r & 0 \\
+        0 & 0
+    \end{pmatrix} = D \Longrightarrow A = P^{-1}_1 \dots P^{-1}_t D Q^{-1}_s Q^{-1}_{s-1} \dots Q^{-1}_{1}$
 
-\begin{theorem2}
-    Обратимая матрица всегда является произведением элементарных матриц
+    Легко видеть, что матрицы, обратные к элементарным, сами являются элементарными
 
-    \begin{proof}
-        $P_t \dots P_1 \cdot A \cdot Q_1 \dots Q_s = \begin{pmatrix}
-            E_r & 0 \\
-            0 & 0
-        \end{pmatrix} = D \Longrightarrow A = P^{-1}_1 \dots P^{-1}_t D Q^{-1}_s Q^{-1}_{s-1} \dots Q^{-1}_{1}$
+    $S^{-1}_{ij} = S_{ij} \quad D^{-1}_{ij}(\varepsilon) = D_{ij}(\varepsilon^{-1}) \quad T^{-1}_{ij}(\lambda) = T_{ij}(-\lambda)$
 
-        Легко видеть, что матрицы, обратные к элементарным, сами являются элементарными
+    Значит равенство $A = P^{-1}_1 \dots P^{-1}_t D Q^{-1}_s Q^{-1}_{s-1} \dots Q^{-1}_{1}$ мы можем записать 
+    как $A = PDQ$
+\end{proof}
+\
+\notice Обратимая матрица всегда является произведением элементарных матриц (докажем чуть позже)
 
-        $S^{-1}_{ij} = S_{ij} \quad D^{-1}_{ij}(\varepsilon) = D_{ij}(\varepsilon^{-1}) \quad T^{-1}_{ij}(\lambda) = T_{ij}(-\lambda)$
-
-        Значит равенство $A = P^{-1}_1 \dots P^{-1}_t D Q^{-1}_s Q^{-1}_{s-1} \dots Q^{-1}_{1}$ мы можем записать 
-        как $A = PDQ$
-    \end{proof}
-\end{theorem2}
+\
 
 \follow \; $A \in M(m, n, K) \; A = P_t \dots P_1 \cdot D \cdot Q_1 \dots Q_s, \quad P_i, Q_j $ - элементарные матрицы, $D = \begin{pmatrix}
     E_r & 0 \\
